@@ -44,7 +44,7 @@
 		828D3BFB1276D995C7B906DB /* Pods-WeatherForekast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekast.debug.xcconfig"; path = "Target Support Files/Pods-WeatherForekast/Pods-WeatherForekast.debug.xcconfig"; sourceTree = "<group>"; };
 		A14418F38252AD7709A563A2 /* Pods-WeatherForekast-WeatherForekastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekast-WeatherForekastUITests.release.xcconfig"; path = "Target Support Files/Pods-WeatherForekast-WeatherForekastUITests/Pods-WeatherForekast-WeatherForekastUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B29D13595FF653F6E81AD69B /* Pods-WeatherForekast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekast.release.xcconfig"; path = "Target Support Files/Pods-WeatherForekast/Pods-WeatherForekast.release.xcconfig"; sourceTree = "<group>"; };
-		BEA70AA72492863A00B4D57A /* WeatherForekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAE2492863A00B4D57A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		BEA70AA82492863A00B4D57A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEA70AA72492863A00B4D57A /* WeatherForekast.app */,
+				BEA70AA72492863A00B4D57A /* Forekast.app */,
 				BEA70ABD2492863C00B4D57A /* WeatherForekastTests.xctest */,
 				BEA70AC82492863C00B4D57A /* WeatherForekastUITests.xctest */,
 			);
@@ -219,7 +219,7 @@
 			);
 			name = WeatherForekast;
 			productName = WeatherForekast;
-			productReference = BEA70AA72492863A00B4D57A /* WeatherForekast.app */;
+			productReference = BEA70AA72492863A00B4D57A /* Forekast.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BEA70ABC2492863C00B4D57A /* WeatherForekastTests */ = {
@@ -623,7 +623,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenk11.WeatherForekast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Forekast;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -642,7 +642,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenk11.WeatherForekast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Forekast;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
