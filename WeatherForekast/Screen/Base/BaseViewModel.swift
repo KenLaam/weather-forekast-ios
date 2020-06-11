@@ -19,4 +19,5 @@ protocol ViewModelType {
 
 class BaseViewModel {
     var disposeBag = DisposeBag()
+    var error = PublishSubject<ErrorResponse?>()
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" rowHeight="204" id="KGk-i7-Jjw" customClass="ForecastTableViewCell" customModule="Forekast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="204"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="204"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKQ-Qt-0ge">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="204"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zkb-RY-LLt">
+                                <rect key="frame" x="16" y="8" width="303" height="188"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJ6-ot-6Zf">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu8-9Z-wET">
+                                        <rect key="frame" x="0.0" y="42" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDE-fV-bDX">
+                                        <rect key="frame" x="0.0" y="84" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iie-d6-act">
+                                        <rect key="frame" x="0.0" y="125.5" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-Ne-UY7">
+                                        <rect key="frame" x="0.0" y="167.5" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zkb-RY-LLt" secondAttribute="trailing" constant="16" id="Uyc-EL-vq6"/>
+                            <constraint firstAttribute="bottom" secondItem="zkb-RY-LLt" secondAttribute="bottom" constant="8" id="afW-zy-lt9"/>
+                            <constraint firstItem="zkb-RY-LLt" firstAttribute="leading" secondItem="nKQ-Qt-0ge" secondAttribute="leading" constant="16" id="q3p-AV-smR"/>
+                            <constraint firstItem="zkb-RY-LLt" firstAttribute="top" secondItem="nKQ-Qt-0ge" secondAttribute="top" constant="8" id="sjK-eS-P8c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nKQ-Qt-0ge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="J8P-ym-itx"/>
+                    <constraint firstAttribute="trailing" secondItem="nKQ-Qt-0ge" secondAttribute="trailing" id="LQ6-kY-BLi"/>
+                    <constraint firstItem="nKQ-Qt-0ge" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NhT-b3-D5n"/>
+                    <constraint firstAttribute="bottom" secondItem="nKQ-Qt-0ge" secondAttribute="bottom" id="gGV-ZG-hkT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblDate" destination="GJ6-ot-6Zf" id="dMf-Xh-HKY"/>
+                <outlet property="lblDescription" destination="c4j-Ne-UY7" id="pD6-em-QQ7"/>
+                <outlet property="lblHumidity" destination="Iie-d6-act" id="M3l-qd-aUS"/>
+                <outlet property="lblPressure" destination="KDE-fV-bDX" id="pX1-RL-fOH"/>
+                <outlet property="lblTemp" destination="fu8-9Z-wET" id="FSs-5s-SpN"/>
+                <outlet property="viewContainer" destination="nKQ-Qt-0ge" id="FeO-eH-LKD"/>
+            </connections>
+            <point key="canvasLocation" x="151.44927536231884" y="206.91964285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
