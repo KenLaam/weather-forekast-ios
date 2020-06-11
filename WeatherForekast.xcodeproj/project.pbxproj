@@ -24,9 +24,10 @@
 		BE88709F24928C500020A384 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88709E24928C500020A384 /* HomeViewController.swift */; };
 		BE8870A124928C560020A384 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870A024928C560020A384 /* HomeViewModel.swift */; };
 		BE8870A324928CBD0020A384 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870A224928CBD0020A384 /* BindableType.swift */; };
+		BE8870A524928F240020A384 /* UIStoryboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870A424928F240020A384 /* UIStoryboardExt.swift */; };
+		BE8870A824928F490020A384 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870A724928F490020A384 /* UIUtils.swift */; };
 		BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAA2492863A00B4D57A /* AppDelegate.swift */; };
 		BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */; };
-		BEA70AAF2492863A00B4D57A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAE2492863A00B4D57A /* ViewController.swift */; };
 		BEA70AB22492863A00B4D57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB02492863A00B4D57A /* Main.storyboard */; };
 		BEA70AB42492863C00B4D57A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB32492863C00B4D57A /* Assets.xcassets */; };
 		BEA70AB72492863C00B4D57A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB52492863C00B4D57A /* LaunchScreen.storyboard */; };
@@ -72,10 +73,11 @@
 		BE88709E24928C500020A384 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BE8870A024928C560020A384 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BE8870A224928CBD0020A384 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		BE8870A424928F240020A384 /* UIStoryboardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExt.swift; sourceTree = "<group>"; };
+		BE8870A724928F490020A384 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEA70AAE2492863A00B4D57A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEA70AB12492863A00B4D57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA70AB32492863C00B4D57A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA70AB62492863C00B4D57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,10 +161,9 @@
 		BE887081249287040020A384 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				BE88709924928C340020A384 /* Settings */,
-				BE88709824928C320020A384 /* Home */,
 				BE887090249289070020A384 /* Base */,
-				BEA70AAE2492863A00B4D57A /* ViewController.swift */,
+				BE88709824928C320020A384 /* Home */,
+				BE88709924928C340020A384 /* Settings */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -172,6 +173,7 @@
 			children = (
 				BE887083249288900020A384 /* ClassNameProtocol.swift */,
 				BE887085249288A60020A384 /* UITableViewExt.swift */,
+				BE8870A424928F240020A384 /* UIStoryboardExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -223,6 +225,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		BE8870A624928F410020A384 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BE8870A724928F490020A384 /* UIUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		BEA70A9E2492863A00B4D57A = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +265,7 @@
 				BE887081249287040020A384 /* Screen */,
 				BE887095249289200020A384 /* Service */,
 				BE887080249287000020A384 /* Storyboard */,
+				BE8870A624928F410020A384 /* Util */,
 			);
 			path = WeatherForekast;
 			sourceTree = "<group>";
@@ -529,9 +540,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA70AAF2492863A00B4D57A /* ViewController.swift in Sources */,
 				BE887094249289150020A384 /* BaseViewModel.swift in Sources */,
 				BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */,
+				BE8870A524928F240020A384 /* UIStoryboardExt.swift in Sources */,
 				BE8870A124928C560020A384 /* HomeViewModel.swift in Sources */,
 				BE887086249288A60020A384 /* UITableViewExt.swift in Sources */,
 				BE88708F249288FC0020A384 /* ScreenTransitionType.swift in Sources */,
@@ -544,6 +555,7 @@
 				BE88709B24928C3C0020A384 /* SettingsViewController.swift in Sources */,
 				BE8870A324928CBD0020A384 /* BindableType.swift in Sources */,
 				BE887097249289290020A384 /* NetworkService.swift in Sources */,
+				BE8870A824928F490020A384 /* UIUtils.swift in Sources */,
 				BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */,
 				BE88709D24928C470020A384 /* SettingsViewModel.swift in Sources */,
 			);

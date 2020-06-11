@@ -36,7 +36,7 @@ class Router {
         coordinator.transition(to: .home, type: .root)
     }
     
-    func toSetting() {
+    func toSettings() {
         coordinator.transition(to: .settings, type: .push)
     }
 }

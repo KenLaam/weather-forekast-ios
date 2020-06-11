@@ -9,5 +9,7 @@
 import UIKit
 
 class SettingsViewController: BaseViewController<SettingsViewModel> {
-    
+    override func setupLocalization() {
+        title = "Settings"
+    }
 }

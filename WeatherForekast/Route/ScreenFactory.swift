@@ -15,11 +15,22 @@ enum Screen {
 
 extension Screen {
     func createViewController() -> UIViewController {
+        var vc = UIViewController()
         switch self {
         case .home:
-            return UIViewController()
+            if var homeVC = UIUtils.getViewController(with: HomeViewController.className, in: .main) as? HomeViewController {
+                homeVC.bindVM(to: HomeViewModel())
+                let nav = UINavigationController(rootViewController: homeVC)
+                vc = nav
+            }
         case .settings:
-            return UIViewController()
+            if var settingsVC = UIUtils.getViewController(with: SettingsViewController.className, in: .main) as? SettingsViewController {
+                settingsVC.bindVM(to: SettingsViewModel())
+                vc = settingsVC
+            }
+        @unknown default:
+            break
         }
+        return vc
     }
 }

@@ -9,5 +9,11 @@
 import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
+    override func setupLocalization() {
+        title = "Weather Forekast"
+    }
     
+    @IBAction func onTapSettings(_ sender: Any) {
+        Router.shared.toSettings()
+    }
 }
