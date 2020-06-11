@@ -34,30 +34,9 @@ class PreferencesService: NSObject {
         return userDefaults.object(forKey: key) as? T
     }
     
-    private func getArrayData<T>(_ key: String) -> [T]? {
-        return userDefaults.object(forKey: key) as? [T]
-    }
-    
-    private func getDTO<T: Decodable>(_ key: String) -> T? {
-        guard let data = userDefaults.value(forKey: key) as? Data else {
-            return nil
-        }
-        return try? PropertyListDecoder().decode(T.self, from: data)
-    }
-    
     // MARK: De-serializer
     private func saveData(key: String, value: Any) {
         userDefaults.set(value, forKey: key)
-        userDefaults.synchronize()
-    }
-    
-    private func saveArrayData(key: String, value: [Any]) {
-        userDefaults.set(value, forKey: key)
-        userDefaults.synchronize()
-    }
-    
-    private func saveDTO<T: Encodable>(key: String, value: T) {
-        userDefaults.set(try? PropertyListEncoder().encode(value), forKey: key)
         userDefaults.synchronize()
     }
 }

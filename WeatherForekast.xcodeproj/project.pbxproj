@@ -34,6 +34,8 @@
 		BE8870B9249295290020A384 /* RequestForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870B8249295290020A384 /* RequestForecast.swift */; };
 		BE8870BB249297560020A384 /* Encodable+Dictionarize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870BA249297560020A384 /* Encodable+Dictionarize.swift */; };
 		BE8870BD249297BC0020A384 /* ResponseForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870BC249297BC0020A384 /* ResponseForecast.swift */; };
+		BE8870BF24929B930020A384 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870BE24929B930020A384 /* WeatherApi.swift */; };
+		BE8870C124929EC90020A384 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870C024929EC90020A384 /* ErrorResponse.swift */; };
 		BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAA2492863A00B4D57A /* AppDelegate.swift */; };
 		BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */; };
 		BEA70AB22492863A00B4D57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB02492863A00B4D57A /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 		BE8870B8249295290020A384 /* RequestForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForecast.swift; sourceTree = "<group>"; };
 		BE8870BA249297560020A384 /* Encodable+Dictionarize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dictionarize.swift"; sourceTree = "<group>"; };
 		BE8870BC249297BC0020A384 /* ResponseForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseForecast.swift; sourceTree = "<group>"; };
+		BE8870BE24929B930020A384 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		BE8870C024929EC90020A384 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,9 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				BEA70AB82492863C00B4D57A /* Info.plist */,
+				BE8870B3249293640020A384 /* AppConfiguration.swift */,
 				BEA70AAA2492863A00B4D57A /* AppDelegate.swift */,
 				BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */,
-				BE8870B3249293640020A384 /* AppConfiguration.swift */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -223,8 +227,10 @@
 		BE887095249289200020A384 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BE8870C024929EC90020A384 /* ErrorResponse.swift */,
 				BE887096249289290020A384 /* NetworkService.swift */,
 				BE8870AF249292F50020A384 /* PreferencesService.swift */,
+				BE8870BE24929B930020A384 /* WeatherApi.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -590,6 +596,7 @@
 				BE8870BB249297560020A384 /* Encodable+Dictionarize.swift in Sources */,
 				BE887089249288DC0020A384 /* Router.swift in Sources */,
 				BE8870B0249292F50020A384 /* PreferencesService.swift in Sources */,
+				BE8870BF24929B930020A384 /* WeatherApi.swift in Sources */,
 				BE8870B4249293640020A384 /* AppConfiguration.swift in Sources */,
 				BE8870BD249297BC0020A384 /* ResponseForecast.swift in Sources */,
 				BE88708D249288F40020A384 /* ScreenFactory.swift in Sources */,
@@ -598,6 +605,7 @@
 				BE8870B2249293330020A384 /* AppUtils.swift in Sources */,
 				BE887097249289290020A384 /* NetworkService.swift in Sources */,
 				BE8870A824928F490020A384 /* UIUtils.swift in Sources */,
+				BE8870C124929EC90020A384 /* ErrorResponse.swift in Sources */,
 				BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */,
 				BE88709D24928C470020A384 /* SettingsViewModel.swift in Sources */,
 			);

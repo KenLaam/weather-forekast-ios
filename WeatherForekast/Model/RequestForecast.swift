@@ -13,6 +13,12 @@ class RequestForecast: Encodable {
     var count: Int = AppConfiguration.FORECAST_DAYS_MIN
     var unit: TemperatureUnit = .kelvin
     var lang: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case keyword = "q"
+        case count = "cnt"
+        case unit, lang
+    }
 }
 
 enum TemperatureUnit: String, Encodable {
