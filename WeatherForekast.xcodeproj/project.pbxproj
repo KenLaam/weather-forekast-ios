@@ -10,6 +10,15 @@
 		3F5FA23EBC4FFC446C8E78B2 /* Pods_WeatherForekast_WeatherForekastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14E947DE112A3F49DE47073 /* Pods_WeatherForekast_WeatherForekastUITests.framework */; };
 		647E711AE2F03F2C1D0012B6 /* Pods_WeatherForekastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D12F56B0CED9BCCF44AD56 /* Pods_WeatherForekastTests.framework */; };
 		78E9EBF97929892D9BD36F02 /* Pods_WeatherForekast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD652ACFB0A10B2ED21F537A /* Pods_WeatherForekast.framework */; };
+		BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887083249288900020A384 /* ClassNameProtocol.swift */; };
+		BE887086249288A60020A384 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887085249288A60020A384 /* UITableViewExt.swift */; };
+		BE887089249288DC0020A384 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887088249288DC0020A384 /* Router.swift */; };
+		BE88708B249288E70020A384 /* ScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88708A249288E70020A384 /* ScreenCoordinator.swift */; };
+		BE88708D249288F40020A384 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88708C249288F40020A384 /* ScreenFactory.swift */; };
+		BE88708F249288FC0020A384 /* ScreenTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88708E249288FC0020A384 /* ScreenTransitionType.swift */; };
+		BE8870922492890F0020A384 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870912492890F0020A384 /* BaseViewController.swift */; };
+		BE887094249289150020A384 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887093249289150020A384 /* BaseViewModel.swift */; };
+		BE887097249289290020A384 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887096249289290020A384 /* NetworkService.swift */; };
 		BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAA2492863A00B4D57A /* AppDelegate.swift */; };
 		BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */; };
 		BEA70AAF2492863A00B4D57A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAE2492863A00B4D57A /* ViewController.swift */; };
@@ -44,6 +53,15 @@
 		828D3BFB1276D995C7B906DB /* Pods-WeatherForekast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekast.debug.xcconfig"; path = "Target Support Files/Pods-WeatherForekast/Pods-WeatherForekast.debug.xcconfig"; sourceTree = "<group>"; };
 		A14418F38252AD7709A563A2 /* Pods-WeatherForekast-WeatherForekastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekast-WeatherForekastUITests.release.xcconfig"; path = "Target Support Files/Pods-WeatherForekast-WeatherForekastUITests/Pods-WeatherForekast-WeatherForekastUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B29D13595FF653F6E81AD69B /* Pods-WeatherForekast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekast.release.xcconfig"; path = "Target Support Files/Pods-WeatherForekast/Pods-WeatherForekast.release.xcconfig"; sourceTree = "<group>"; };
+		BE887083249288900020A384 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		BE887085249288A60020A384 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
+		BE887088249288DC0020A384 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BE88708A249288E70020A384 /* ScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinator.swift; sourceTree = "<group>"; };
+		BE88708C249288F40020A384 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		BE88708E249288FC0020A384 /* ScreenTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionType.swift; sourceTree = "<group>"; };
+		BE8870912492890F0020A384 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BE887093249289150020A384 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		BE887096249289290020A384 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,9 +149,47 @@
 		BE887081249287040020A384 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BE887090249289070020A384 /* Base */,
 				BEA70AAE2492863A00B4D57A /* ViewController.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		BE8870822492885E0020A384 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BE887083249288900020A384 /* ClassNameProtocol.swift */,
+				BE887085249288A60020A384 /* UITableViewExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BE887087249288D70020A384 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				BE887088249288DC0020A384 /* Router.swift */,
+				BE88708A249288E70020A384 /* ScreenCoordinator.swift */,
+				BE88708C249288F40020A384 /* ScreenFactory.swift */,
+				BE88708E249288FC0020A384 /* ScreenTransitionType.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		BE887090249289070020A384 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BE8870912492890F0020A384 /* BaseViewController.swift */,
+				BE887093249289150020A384 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BE887095249289200020A384 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BE887096249289290020A384 /* NetworkService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		BEA70A9E2492863A00B4D57A = {
@@ -162,8 +218,11 @@
 			isa = PBXGroup;
 			children = (
 				BE88707E249286F80020A384 /* AppConfig */,
+				BE8870822492885E0020A384 /* Extension */,
 				BE88707F249286FD0020A384 /* Resource */,
+				BE887087249288D70020A384 /* Route */,
 				BE887081249287040020A384 /* Screen */,
+				BE887095249289200020A384 /* Service */,
 				BE887080249287000020A384 /* Storyboard */,
 			);
 			path = WeatherForekast;
@@ -440,8 +499,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA70AAF2492863A00B4D57A /* ViewController.swift in Sources */,
+				BE887094249289150020A384 /* BaseViewModel.swift in Sources */,
 				BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */,
+				BE887086249288A60020A384 /* UITableViewExt.swift in Sources */,
+				BE88708F249288FC0020A384 /* ScreenTransitionType.swift in Sources */,
 				BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */,
+				BE8870922492890F0020A384 /* BaseViewController.swift in Sources */,
+				BE88708B249288E70020A384 /* ScreenCoordinator.swift in Sources */,
+				BE887089249288DC0020A384 /* Router.swift in Sources */,
+				BE88708D249288F40020A384 /* ScreenFactory.swift in Sources */,
+				BE887097249289290020A384 /* NetworkService.swift in Sources */,
+				BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
