@@ -19,6 +19,11 @@
 		BE8870922492890F0020A384 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870912492890F0020A384 /* BaseViewController.swift */; };
 		BE887094249289150020A384 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887093249289150020A384 /* BaseViewModel.swift */; };
 		BE887097249289290020A384 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887096249289290020A384 /* NetworkService.swift */; };
+		BE88709B24928C3C0020A384 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88709A24928C3C0020A384 /* SettingsViewController.swift */; };
+		BE88709D24928C470020A384 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88709C24928C470020A384 /* SettingsViewModel.swift */; };
+		BE88709F24928C500020A384 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88709E24928C500020A384 /* HomeViewController.swift */; };
+		BE8870A124928C560020A384 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870A024928C560020A384 /* HomeViewModel.swift */; };
+		BE8870A324928CBD0020A384 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870A224928CBD0020A384 /* BindableType.swift */; };
 		BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAA2492863A00B4D57A /* AppDelegate.swift */; };
 		BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */; };
 		BEA70AAF2492863A00B4D57A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAE2492863A00B4D57A /* ViewController.swift */; };
@@ -62,6 +67,11 @@
 		BE8870912492890F0020A384 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BE887093249289150020A384 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BE887096249289290020A384 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BE88709A24928C3C0020A384 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BE88709C24928C470020A384 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		BE88709E24928C500020A384 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BE8870A024928C560020A384 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BE8870A224928CBD0020A384 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +159,8 @@
 		BE887081249287040020A384 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BE88709924928C340020A384 /* Settings */,
+				BE88709824928C320020A384 /* Home */,
 				BE887090249289070020A384 /* Base */,
 				BEA70AAE2492863A00B4D57A /* ViewController.swift */,
 			);
@@ -180,6 +192,7 @@
 			children = (
 				BE8870912492890F0020A384 /* BaseViewController.swift */,
 				BE887093249289150020A384 /* BaseViewModel.swift */,
+				BE8870A224928CBD0020A384 /* BindableType.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -190,6 +203,24 @@
 				BE887096249289290020A384 /* NetworkService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BE88709824928C320020A384 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BE88709E24928C500020A384 /* HomeViewController.swift */,
+				BE8870A024928C560020A384 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BE88709924928C340020A384 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BE88709A24928C3C0020A384 /* SettingsViewController.swift */,
+				BE88709C24928C470020A384 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		BEA70A9E2492863A00B4D57A = {
@@ -501,15 +532,20 @@
 				BEA70AAF2492863A00B4D57A /* ViewController.swift in Sources */,
 				BE887094249289150020A384 /* BaseViewModel.swift in Sources */,
 				BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */,
+				BE8870A124928C560020A384 /* HomeViewModel.swift in Sources */,
 				BE887086249288A60020A384 /* UITableViewExt.swift in Sources */,
 				BE88708F249288FC0020A384 /* ScreenTransitionType.swift in Sources */,
+				BE88709F24928C500020A384 /* HomeViewController.swift in Sources */,
 				BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */,
 				BE8870922492890F0020A384 /* BaseViewController.swift in Sources */,
 				BE88708B249288E70020A384 /* ScreenCoordinator.swift in Sources */,
 				BE887089249288DC0020A384 /* Router.swift in Sources */,
 				BE88708D249288F40020A384 /* ScreenFactory.swift in Sources */,
+				BE88709B24928C3C0020A384 /* SettingsViewController.swift in Sources */,
+				BE8870A324928CBD0020A384 /* BindableType.swift in Sources */,
 				BE887097249289290020A384 /* NetworkService.swift in Sources */,
 				BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */,
+				BE88709D24928C470020A384 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

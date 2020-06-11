@@ -7,3 +7,33 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class BaseViewController<VM: ViewModelType>: UIViewController, BindableType {
+    var viewModel: VM!
+    var disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupLocalization()
+    }
+    
+    func setupUI() {
+        
+    }
+    
+    func setupLocalization() {
+        
+    }
+    
+    func bindViewModel() {
+        
+    }
+}
