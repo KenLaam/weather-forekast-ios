@@ -31,6 +31,9 @@
 		BE8870B2249293330020A384 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870B1249293330020A384 /* AppUtils.swift */; };
 		BE8870B4249293640020A384 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870B3249293640020A384 /* AppConfiguration.swift */; };
 		BE8870B62492943C0020A384 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870B52492943C0020A384 /* String+Localization.swift */; };
+		BE8870B9249295290020A384 /* RequestForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870B8249295290020A384 /* RequestForecast.swift */; };
+		BE8870BB249297560020A384 /* Encodable+Dictionarize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870BA249297560020A384 /* Encodable+Dictionarize.swift */; };
+		BE8870BD249297BC0020A384 /* ResponseForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8870BC249297BC0020A384 /* ResponseForecast.swift */; };
 		BEA70AAB2492863A00B4D57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAA2492863A00B4D57A /* AppDelegate.swift */; };
 		BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */; };
 		BEA70AB22492863A00B4D57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB02492863A00B4D57A /* Main.storyboard */; };
@@ -86,6 +89,9 @@
 		BE8870B1249293330020A384 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		BE8870B3249293640020A384 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		BE8870B52492943C0020A384 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		BE8870B8249295290020A384 /* RequestForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForecast.swift; sourceTree = "<group>"; };
+		BE8870BA249297560020A384 /* Encodable+Dictionarize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dictionarize.swift"; sourceTree = "<group>"; };
+		BE8870BC249297BC0020A384 /* ResponseForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseForecast.swift; sourceTree = "<group>"; };
 		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 				BE887083249288900020A384 /* ClassNameProtocol.swift */,
 				BE887085249288A60020A384 /* UITableViewExt.swift */,
 				BE8870A424928F240020A384 /* UIStoryboardExt.swift */,
+				BE8870BA249297560020A384 /* Encodable+Dictionarize.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -249,6 +256,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		BE8870B72492950C0020A384 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE8870B8249295290020A384 /* RequestForecast.swift */,
+				BE8870BC249297BC0020A384 /* ResponseForecast.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BEA70A9E2492863A00B4D57A = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +292,7 @@
 			children = (
 				BE88707E249286F80020A384 /* AppConfig */,
 				BE8870822492885E0020A384 /* Extension */,
+				BE8870B72492950C0020A384 /* Model */,
 				BE88707F249286FD0020A384 /* Resource */,
 				BE887087249288D70020A384 /* Route */,
 				BE887081249287040020A384 /* Screen */,
@@ -565,13 +582,16 @@
 				BE8870A124928C560020A384 /* HomeViewModel.swift in Sources */,
 				BE887086249288A60020A384 /* UITableViewExt.swift in Sources */,
 				BE88708F249288FC0020A384 /* ScreenTransitionType.swift in Sources */,
+				BE8870B9249295290020A384 /* RequestForecast.swift in Sources */,
 				BE88709F24928C500020A384 /* HomeViewController.swift in Sources */,
 				BEA70AAD2492863A00B4D57A /* SceneDelegate.swift in Sources */,
 				BE8870922492890F0020A384 /* BaseViewController.swift in Sources */,
 				BE88708B249288E70020A384 /* ScreenCoordinator.swift in Sources */,
+				BE8870BB249297560020A384 /* Encodable+Dictionarize.swift in Sources */,
 				BE887089249288DC0020A384 /* Router.swift in Sources */,
 				BE8870B0249292F50020A384 /* PreferencesService.swift in Sources */,
 				BE8870B4249293640020A384 /* AppConfiguration.swift in Sources */,
+				BE8870BD249297BC0020A384 /* ResponseForecast.swift in Sources */,
 				BE88708D249288F40020A384 /* ScreenFactory.swift in Sources */,
 				BE88709B24928C3C0020A384 /* SettingsViewController.swift in Sources */,
 				BE8870A324928CBD0020A384 /* BindableType.swift in Sources */,
