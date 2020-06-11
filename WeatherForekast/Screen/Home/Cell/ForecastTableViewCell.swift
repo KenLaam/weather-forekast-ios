@@ -17,15 +17,15 @@ class ForecastTableViewCell: BaseTableViewCell<ForecastCellViewModel> {
     @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func bindViewModel() {
+        let input = ForecastCellViewModel.Input()
+        let _ = viewModel.transform(input)
+        
+        viewModel.date.bind(to: lblDate.rx.text).disposed(by: disposeBag)
+        viewModel.temp.bind(to: lblTemp.rx.text).disposed(by: disposeBag)
+        viewModel.pressure.bind(to: lblPressure.rx.text).disposed(by: disposeBag)
+        viewModel.humidity.bind(to: lblHumidity.rx.text).disposed(by: disposeBag)
+        viewModel.description.bind(to: lblDescription.rx.text).disposed(by: disposeBag)
     }
     
 }

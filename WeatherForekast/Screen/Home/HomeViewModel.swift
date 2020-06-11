@@ -25,22 +25,24 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     
     func transform(_ input: Input) -> Output {
         request.keyword = "saigon"
+        request.count = 7
         onPullToRefresh.subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             self.refreshingIndicator.onNext(true)
-            self.fetchForecast { response in
-                self.forecast.accept(response.lstForecast)
+            self.fetchForecast { lstForecast in
+                self.forecast.accept(lstForecast)
             }
         }).disposed(by: disposeBag)
         return Output()
     }
     
-    func fetchForecast(completion: @escaping (ResponseForecast) -> Void) {
+    func fetchForecast(completion: @escaping ([Forecast]) -> Void) {
         NetworkService.shared.fetchForecast(request: request)
             .subscribe(onSuccess: { [weak self] response in
                 guard let `self` = self else { return }
                 self.refreshingIndicator.onNext(false)
                 self.error.onNext(nil)
+                completion(response.lstForecast)
             }) { [weak self] error in
                 guard let `self` = self else { return }
                 self.refreshingIndicator.onNext(false)

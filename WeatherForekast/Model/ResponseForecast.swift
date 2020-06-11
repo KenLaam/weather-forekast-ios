@@ -33,9 +33,10 @@ class Forecast: Decodable {
     let pressure: Int?
     let humidity: Int?
     let temperature: Temperature
+    let weather: [Weather]
     
     enum CodingKeys: String, CodingKey {
-        case pressure, humidity
+        case pressure, humidity, weather
         case date = "dt"
         case temperature = "temp"
     }

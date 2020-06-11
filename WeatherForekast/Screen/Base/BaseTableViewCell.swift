@@ -25,7 +25,7 @@ class BaseTableViewCell<T: ViewModelType>: UITableViewCell, BindableType {
     }
     
     private func setup() {
-        configUI()
+        setupUI()
         updateData()
     }
     
@@ -33,7 +33,7 @@ class BaseTableViewCell<T: ViewModelType>: UITableViewCell, BindableType {
         
     }
     
-    func configUI() {
+    func setupUI() {
         
     }
     

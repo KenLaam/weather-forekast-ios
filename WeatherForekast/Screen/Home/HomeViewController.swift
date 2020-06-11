@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         tableForecasts.register(cellType: ForecastTableViewCell.self)
         tableForecasts.allowsSelection = false
         tableForecasts.refreshControl = refreshControl
+        tableForecasts.tableFooterView = UIView(frame: .zero)
     }
     
     override func setupLocalization() {

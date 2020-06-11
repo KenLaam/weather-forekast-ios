@@ -18,9 +18,19 @@ class ForecastCellViewModel: BaseViewModel, ViewModelType {
     }
     
     var forecast: Forecast!
+    var date = BehaviorRelay<String>(value: "")
+    var temp = BehaviorRelay<String>(value: "")
+    var pressure = BehaviorRelay<String>(value: "")
+    var humidity = BehaviorRelay<String>(value: "")
+    var description = BehaviorRelay<String>(value: "")
     
     init(_ forecast: Forecast) {
         self.forecast = forecast
+        date.accept("Date: \(forecast.date ?? 0)")
+        temp.accept("Average temperature: \(forecast.temperature.day ?? 0.0)")
+        pressure.accept("Pressure: \(forecast.pressure ?? 0)")
+        humidity.accept("Humidity: \(forecast.humidity ?? 0)")
+        description.accept("Description: \(forecast.weather[0].description ?? "")")
     }
     
     func transform(_ input: Input) -> Output {
