@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -101,6 +101,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE88707E249286F80020A384 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				BEA70AB82492863C00B4D57A /* Info.plist */,
+				BEA70AAA2492863A00B4D57A /* AppDelegate.swift */,
+				BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		BE88707F249286FD0020A384 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BEA70AB32492863C00B4D57A /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BE887080249287000020A384 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BEA70AB52492863C00B4D57A /* LaunchScreen.storyboard */,
+				BEA70AB02492863A00B4D57A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BE887081249287040020A384 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BEA70AAE2492863A00B4D57A /* ViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		BEA70A9E2492863A00B4D57A = {
 			isa = PBXGroup;
 			children = (
@@ -126,13 +161,10 @@
 		BEA70AA92492863A00B4D57A /* WeatherForekast */ = {
 			isa = PBXGroup;
 			children = (
-				BEA70AAA2492863A00B4D57A /* AppDelegate.swift */,
-				BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */,
-				BEA70AAE2492863A00B4D57A /* ViewController.swift */,
-				BEA70AB02492863A00B4D57A /* Main.storyboard */,
-				BEA70AB32492863C00B4D57A /* Assets.xcassets */,
-				BEA70AB52492863C00B4D57A /* LaunchScreen.storyboard */,
-				BEA70AB82492863C00B4D57A /* Info.plist */,
+				BE88707E249286F80020A384 /* AppConfig */,
+				BE88707F249286FD0020A384 /* Resource */,
+				BE887081249287040020A384 /* Screen */,
+				BE887080249287000020A384 /* Storyboard */,
 			);
 			path = WeatherForekast;
 			sourceTree = "<group>";
@@ -165,7 +197,6 @@
 				4D6EDDD4E654C2361823FEA8 /* Pods-WeatherForekastTests.debug.xcconfig */,
 				E4D2D6902D9D6B2C8BB0A263 /* Pods-WeatherForekastTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -585,7 +616,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WeatherForekast/Info.plist;
+				INFOPLIST_FILE = WeatherForekast/AppConfig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,7 +635,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WeatherForekast/Info.plist;
+				INFOPLIST_FILE = WeatherForekast/AppConfig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
