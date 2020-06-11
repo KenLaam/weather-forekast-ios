@@ -6,4 +6,37 @@
 //  Copyright © 2020 Ken Lam. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import RxSwift
+
+class Router {
+    
+    static let shared = Router()
+    private init() {}
+    
+    var coordinator: ScreenCoordinator!
+    let disposeBag = DisposeBag()
+    
+    func setWindow(window: UIWindow) {
+        coordinator = ScreenCoordinator(window: window)
+    }
+    
+    @discardableResult
+    func pop(_ animated: Bool = true) -> Completable {
+        return coordinator.pop(toRootview: false, animated: animated)
+    }
+    
+    @discardableResult
+    func popToHome() -> Completable {
+        return coordinator.pop(toRootview: true, animated: true)
+    }
+    
+    // MARK: Navigation
+    func toHome() {
+        coordinator.transition(to: .home, type: .root)
+    }
+    
+    func toSetting() {
+        coordinator.transition(to: .settings, type: .push)
+    }
+}
