@@ -20,9 +20,8 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     }
     
     func fetchForecast(_ keyword: String? = nil) {
-        if keyword != nil {
-            request.keyword = keyword
-        }
+        guard let keyword = keyword, keyword.count >= 3 else { return }
+        request.keyword = keyword
         request.count = 7
         request.units = .celsius
         isLoading.accept(true)
