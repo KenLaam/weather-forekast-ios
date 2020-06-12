@@ -51,6 +51,7 @@
 		BEA70AB72492863C00B4D57A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB52492863C00B4D57A /* LaunchScreen.storyboard */; };
 		BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */; };
 		BEA70ACD2492863C00B4D57A /* WeatherForekastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70ACC2492863C00B4D57A /* WeatherForekastUITests.swift */; };
+		BEA9929C249401B900F05B79 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9929B249401B900F05B79 /* ExtensionTests.swift */; };
 		BEC794CE249378D000127B52 /* Date+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC794CD249378D000127B52 /* Date+Converter.swift */; };
 		BED7AC022493D9F900C598C8 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7AC012493D9F900C598C8 /* UIImageViewExt.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,7 @@
 		BEA70AC82492863C00B4D57A /* WeatherForekastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherForekastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70ACC2492863C00B4D57A /* WeatherForekastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForekastUITests.swift; sourceTree = "<group>"; };
 		BEA70ACE2492863C00B4D57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA9929B249401B900F05B79 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		BEC794CD249378D000127B52 /* Date+Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Converter.swift"; sourceTree = "<group>"; };
 		BED7AC012493D9F900C598C8 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		DD652ACFB0A10B2ED21F537A /* Pods_WeatherForekast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherForekast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */,
+				BEA9929B249401B900F05B79 /* ExtensionTests.swift */,
 				BEA70AC32492863C00B4D57A /* Info.plist */,
 			);
 			path = WeatherForekastTests;
@@ -672,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */,
+				BEA9929C249401B900F05B79 /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
