@@ -49,8 +49,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func setupLocalization() {
-        title = "Weather Forekast".localized()
-        searchBar.placeholder = "Weather in your city".localized()
+        title = "APP_NAME".localized()
+        searchBar.placeholder = "SEARCH_PLACEHOLDER".localized()
     }
     
     override func bindViewModel() {
