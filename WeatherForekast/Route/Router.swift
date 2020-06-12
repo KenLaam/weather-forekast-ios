@@ -36,7 +36,7 @@ class Router {
         coordinator.transition(to: .home, type: .root)
     }
     
-    func toSettings() {
-        coordinator.transition(to: .settings, type: .push)
+    func toSettings(handler: @escaping HandlerUpdateSettings) {
+        coordinator.transition(to: .settings(handler), type: .push)
     }
 }

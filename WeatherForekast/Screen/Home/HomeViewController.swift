@@ -19,7 +19,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showSearchBar()
+        hideSearchBar()
     }
     
     override func setupUI() {

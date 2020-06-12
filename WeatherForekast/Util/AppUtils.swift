@@ -15,9 +15,9 @@ class AppUtils {
             case "vi":
                 return code
             default:
-                return AppConfiguration.DEFAULT_LANGUAGE_CODE
+                return AppConfiguration.DEFAULT_LANGUAGE.rawValue
             }
         }
-        return AppConfiguration.DEFAULT_LANGUAGE_CODE
+        return AppConfiguration.DEFAULT_LANGUAGE.rawValue
     }
 }
