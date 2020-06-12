@@ -13,23 +13,13 @@ import RxCocoa
 class HomeViewModel: BaseViewModel, ViewModelType {
     
     var forecast = BehaviorRelay<[Forecast]>(value: [])
-    var onPullToRefresh = PublishSubject<Void>()
-    var refreshingIndicator = PublishSubject<Bool>()
-    var toggleSearchBar = BehaviorRelay<Bool>(value: false)
-    
     var request = RequestForecast()
     
     func setupData() {
-        request.keyword = "saigon"
-        onPullToRefresh.subscribe(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
-            self.refreshingIndicator.onNext(true)
-            self.fetchForecast()
-        }).disposed(by: disposeBag)
     }
     
     func fetchForecast(_ keyword: String? = nil) {
-        if let keyword = keyword {
+        if keyword != nil {
             request.keyword = keyword
         }
         request.count = 7
@@ -37,15 +27,22 @@ class HomeViewModel: BaseViewModel, ViewModelType {
         NetworkService.shared.fetchForecast(request: request)
             .subscribe(onSuccess: { [weak self] response in
                 guard let `self` = self else { return }
-                self.refreshingIndicator.onNext(false)
-                self.error.onNext(nil)
-                self.forecast.accept(response.lstForecast)
+                if response.isNotFound {
+                    self.forecast.accept([])
+                    self.error.onNext(ErrorResponse(.notFound))
+                } else if let lstForecast = response.lstForecast {
+                    self.forecast.accept(lstForecast)
+                    self.error.onNext(nil)
+                }
             }) { [weak self] error in
                 guard let `self` = self else { return }
-                self.refreshingIndicator.onNext(false)
                 if let errorResponse = error as? ErrorResponse {
                     self.error.onNext(errorResponse)
                 }
         }.disposed(by: disposeBag)
+    }
+    
+    func openSettings() {
+        Router.shared.toSettings()
     }
 }

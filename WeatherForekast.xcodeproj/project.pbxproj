@@ -162,6 +162,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE143CDF2493CB8B00F94FC4 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		BE88707E249286F80020A384 /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +335,7 @@
 				BE887095249289200020A384 /* Service */,
 				BE887080249287000020A384 /* Storyboard */,
 				BE8870A624928F410020A384 /* Util */,
+				BE143CDF2493CB8B00F94FC4 /* Widget */,
 			);
 			path = WeatherForekast;
 			sourceTree = "<group>";

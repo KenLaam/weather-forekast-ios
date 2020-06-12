@@ -12,19 +12,18 @@ import RxSwift
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     @IBOutlet weak var tableForecasts: UITableView!
-    lazy var refreshControl = UIRefreshControl()
     
     lazy var searchBar = UISearchBar()
     lazy var btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchBar))
-    lazy var btnSettings = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(showSettings))
+    lazy var btnSettings = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(showSettings))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showSearchBar()
     }
     
     override func setupUI() {
-        navigationItem.rightBarButtonItem = btnSearch
+        navigationItem.rightBarButtonItem = btnSettings
+        navigationItem.leftBarButtonItem = btnSearch
         
         searchBar.rx.cancelButtonClicked.subscribe(onNext: { _ in
             self.hideSearchBar()
@@ -32,24 +31,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         
         searchBar.rx.searchButtonClicked.subscribe(onNext: { _ in
             self.searchBar.resignFirstResponder()
+            self.viewModel.fetchForecast(self.searchBar.text)
         }).disposed(by: disposeBag)
-        
-        searchBar.rx.text.orEmpty
-            .debounce(.microseconds(2310), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] keyword in
-                guard let `self` = self else { return }
-                if keyword.count > 3 {
-                    self.viewModel.fetchForecast(keyword)
-                }
-            }).disposed(by: disposeBag)
-        
-        refreshControl.addTarget(self, action: #selector(onRefreshTable), for: .valueChanged)
         
         tableForecasts.delegate = self
         tableForecasts.register(cellType: ForecastTableViewCell.self)
         tableForecasts.allowsSelection = false
-        tableForecasts.refreshControl = refreshControl
         tableForecasts.tableFooterView = UIView(frame: .zero)
     }
     
@@ -69,27 +56,26 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             return cell
         }.disposed(by: disposeBag)
         
-        viewModel.refreshingIndicator.subscribe(onNext: { [weak self] isLoading in
-            guard let `self` = self else { return }
-            isLoading ? self.refreshControl.beginRefreshing() : self.refreshControl.endRefreshing()
+        viewModel.forecast.subscribe(onNext: { lstForecast in
         }).disposed(by: disposeBag)
     }
     
     // MARK: Actions
-    @objc func onRefreshTable() {
-        viewModel.onPullToRefresh.onNext(())
-    }
-    
     @objc func showSettings() {
-        debugPrint("Settings")
+        viewModel.openSettings()
     }
     
     @objc func showSearchBar() {
         navigationItem.rightBarButtonItem = nil
         navigationItem.leftBarButtonItem = nil
         navigationItem.titleView = searchBar
-        searchBar.setShowsCancelButton(true, animated: true)
-        searchBar.becomeFirstResponder()
+        searchBar.setShowsCancelButton(true, animated: false)
+        searchBar.alpha = 0.0
+        UIView.animate(withDuration: 0.23, animations: {
+            self.searchBar.alpha = 1.0
+        }) { finshed in
+            self.searchBar.becomeFirstResponder()
+        }
     }
     
     @objc func hideSearchBar() {

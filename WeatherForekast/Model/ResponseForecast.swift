@@ -10,11 +10,17 @@ import Foundation
 
 class ResponseForecast: Decodable {
     let city: City?
-    let lstForecast: [Forecast]
+    let code: String
+    let lstForecast: [Forecast]?
     
     enum CodingKeys: String, CodingKey {
         case city
+        case code = "cod"
         case lstForecast = "list"
+    }
+    
+    var isNotFound: Bool {
+        return code == "404"
     }
 }
 

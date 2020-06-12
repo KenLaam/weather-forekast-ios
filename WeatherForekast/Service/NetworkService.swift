@@ -14,7 +14,8 @@ import RxCocoa
 struct NetworkService {
     private init() {}
     static let shared = NetworkService()
-    let provider = MoyaProvider<WeatherApi>()
+    let provider = MoyaProvider<WeatherApi>(plugins: [NetworkLoggerPlugin(configuration: .init(formatter: .init(),
+    logOptions: .verbose))])
     
     func fetchForecast(request params: RequestForecast) -> Single<ResponseForecast> {
         return request(.forecastDaily(params))
@@ -39,6 +40,10 @@ struct NetworkService {
                             errorResponse.type = .timeout
                         } else if nsError.code == NSURLErrorNotConnectedToInternet {
                             errorResponse.type = .offline
+                        }
+                    case .statusCode(let response):
+                        if response.statusCode == 404 {
+                            debugPrint("City Not Found!")
                         }
                     default:
                         errorResponse.type = .others

@@ -25,6 +25,7 @@ class ForecastTableViewCell: BaseTableViewCell<ForecastCellViewModel> {
     }
     
     override func bindViewModel() {
+        viewModel.setupData()
         viewModel.date.bind(to: lblDate.rx.text).disposed(by: disposeBag)
         viewModel.temp.bind(to: lblTemp.rx.text).disposed(by: disposeBag)
         viewModel.pressure.bind(to: lblPressure.rx.text).disposed(by: disposeBag)
