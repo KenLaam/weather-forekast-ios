@@ -11,18 +11,29 @@ import Foundation
 class RequestForecast: Encodable {
     var keyword: String?
     var count: Int = AppConfiguration.FORECAST_DAYS_MIN
-    var unit: TemperatureUnit = .kelvin
+    var units: TemperatureUnit?
     var lang: String?
     
     enum CodingKeys: String, CodingKey {
         case keyword = "q"
         case count = "cnt"
-        case unit, lang
+        case units, lang
     }
 }
 
 enum TemperatureUnit: String, Encodable {
-    case kelvin = "Kelvin"
-    case celsius = "Celsius"
-    case fahrenheit = "Fahrenheit"
+    case kelvin = "default"
+    case celsius = "metric"
+    case fahrenheit = "imperial"
+    
+    var symbol: String {
+        switch self {
+        case .celsius:
+            return "C"
+        case .kelvin:
+            return "K"
+        case .fahrenheit:
+            return "F"
+        }
+    }
 }

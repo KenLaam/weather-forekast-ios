@@ -35,6 +35,17 @@ class Forecast: Decodable {
     let temperature: Temperature
     let weather: [Weather]
     
+    var dateTime: String {
+        guard let timestamp = date else { return "" }
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        return date.toString()
+    }
+    
+    var tempAverage: String {
+        guard let day = temperature.day else { return "" }
+        return String(format: "%.0f\u{00B0}%@", day, PreferencesService.shared.tempUnit.symbol)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case pressure, humidity, weather
         case date = "dt"

@@ -26,6 +26,7 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     func transform(_ input: Input) -> Output {
         request.keyword = "saigon"
         request.count = 7
+        request.units = .celsius
         onPullToRefresh.subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             self.refreshingIndicator.onNext(true)

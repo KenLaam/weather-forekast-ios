@@ -26,10 +26,10 @@ class ForecastCellViewModel: BaseViewModel, ViewModelType {
     
     init(_ forecast: Forecast) {
         self.forecast = forecast
-        date.accept("Date: \(forecast.date ?? 0)")
-        temp.accept("Average temperature: \(forecast.temperature.day ?? 0.0)")
-        pressure.accept("Pressure: \(forecast.pressure ?? 0)")
-        humidity.accept("Humidity: \(forecast.humidity ?? 0)")
+        date.accept("Date: \(forecast.dateTime)")
+        temp.accept("Average temperature: \(forecast.tempAverage)")
+        pressure.accept("Pressure: \(forecast.pressure ?? 0)hPa")
+        humidity.accept("Humidity: \(forecast.humidity ?? 0)%")
         description.accept("Description: \(forecast.weather[0].description ?? "")")
     }
     
