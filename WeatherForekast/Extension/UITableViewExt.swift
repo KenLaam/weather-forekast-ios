@@ -22,4 +22,25 @@ extension UITableView {
     func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
         return self.dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
     }
+    
+    func toggleLoading(_ isLoading: Bool) {
+        if isLoading {
+            let loadingView = LoadingView(frame: bounds)
+            addSubview(loadingView)
+        } else {
+            for view in subviews where view is LoadingView {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    func toggleErrorBg(_ error: ErrorResponse?) {
+        guard let error = error else {
+            backgroundView = nil
+            return
+        }
+        let viewError = ErrorView(frame: bounds)
+        backgroundView = viewError
+        viewError.lblMessage.text = error.message
+    }
 }

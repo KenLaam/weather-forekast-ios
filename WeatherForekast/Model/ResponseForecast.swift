@@ -78,8 +78,8 @@ class Weather: Decodable {
         case main, description, icon
     }
     
-    var iconURL: String? {
-        guard let icon = icon else { return nil}
-        return "http://openweathermap.org/img/wn/\(icon).png"
+    var iconURL: URL? {
+        guard let icon = icon else { return nil }
+        return URL(string: "http://openweathermap.org/img/wn/\(icon).png")
     }
 }

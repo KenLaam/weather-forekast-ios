@@ -13,6 +13,7 @@ import RxCocoa
 class HomeViewModel: BaseViewModel, ViewModelType {
     
     var forecast = BehaviorRelay<[Forecast]>(value: [])
+    var isLoading = BehaviorRelay<Bool>(value: false)
     var request = RequestForecast()
     
     func setupData() {
@@ -24,9 +25,11 @@ class HomeViewModel: BaseViewModel, ViewModelType {
         }
         request.count = 7
         request.units = .celsius
+        isLoading.accept(true)
         NetworkService.shared.fetchForecast(request: request)
             .subscribe(onSuccess: { [weak self] response in
                 guard let `self` = self else { return }
+                self.isLoading.accept(false)
                 if response.isNotFound {
                     self.forecast.accept([])
                     self.error.onNext(ErrorResponse(.notFound))
@@ -36,6 +39,7 @@ class HomeViewModel: BaseViewModel, ViewModelType {
                 }
             }) { [weak self] error in
                 guard let `self` = self else { return }
+                self.isLoading.accept(false)
                 if let errorResponse = error as? ErrorResponse {
                     self.error.onNext(errorResponse)
                 }

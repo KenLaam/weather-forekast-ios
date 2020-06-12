@@ -41,10 +41,6 @@ struct NetworkService {
                         } else if nsError.code == NSURLErrorNotConnectedToInternet {
                             errorResponse.type = .offline
                         }
-                    case .statusCode(let response):
-                        if response.statusCode == 404 {
-                            debugPrint("City Not Found!")
-                        }
                     default:
                         errorResponse.type = .others
                     }

@@ -56,7 +56,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             return cell
         }.disposed(by: disposeBag)
         
-        viewModel.forecast.subscribe(onNext: { lstForecast in
+        viewModel.isLoading.subscribe(onNext: { isLoading in
+            self.tableForecasts.toggleLoading(isLoading)
+            }).disposed(by: disposeBag)
+        
+        viewModel.error.subscribe(onNext: { error in
+            self.tableForecasts.toggleErrorBg(error)
         }).disposed(by: disposeBag)
     }
     
