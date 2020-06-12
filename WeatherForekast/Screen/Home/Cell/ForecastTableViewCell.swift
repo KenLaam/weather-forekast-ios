@@ -16,6 +16,7 @@ class ForecastTableViewCell: BaseTableViewCell<ForecastCellViewModel> {
     @IBOutlet weak var lblPressure: UILabel!
     @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var imvIcon: UIImageView!
     
     override func setupUI() {
         [lblDate, lblTemp, lblPressure, lblHumidity, lblDescription].forEach {
@@ -31,6 +32,7 @@ class ForecastTableViewCell: BaseTableViewCell<ForecastCellViewModel> {
         viewModel.pressure.bind(to: lblPressure.rx.text).disposed(by: disposeBag)
         viewModel.humidity.bind(to: lblHumidity.rx.text).disposed(by: disposeBag)
         viewModel.description.bind(to: lblDescription.rx.text).disposed(by: disposeBag)
+        viewModel.icon.bind(to: imvIcon.rx.imageURL).disposed(by: disposeBag)
     }
     
 }

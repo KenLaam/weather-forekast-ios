@@ -52,6 +52,7 @@
 		BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */; };
 		BEA70ACD2492863C00B4D57A /* WeatherForekastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70ACC2492863C00B4D57A /* WeatherForekastUITests.swift */; };
 		BEC794CE249378D000127B52 /* Date+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC794CD249378D000127B52 /* Date+Converter.swift */; };
+		BED7AC022493D9F900C598C8 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7AC012493D9F900C598C8 /* UIImageViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		BEA70ACC2492863C00B4D57A /* WeatherForekastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForekastUITests.swift; sourceTree = "<group>"; };
 		BEA70ACE2492863C00B4D57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEC794CD249378D000127B52 /* Date+Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Converter.swift"; sourceTree = "<group>"; };
+		BED7AC012493D9F900C598C8 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		DD652ACFB0A10B2ED21F537A /* Pods_WeatherForekast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherForekast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E947DE112A3F49DE47073 /* Pods_WeatherForekast_WeatherForekastUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherForekast_WeatherForekastUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D2D6902D9D6B2C8BB0A263 /* Pods-WeatherForekastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForekastTests.release.xcconfig"; path = "Target Support Files/Pods-WeatherForekastTests/Pods-WeatherForekastTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				BE887083249288900020A384 /* ClassNameProtocol.swift */,
+				BED7AC012493D9F900C598C8 /* UIImageViewExt.swift */,
 				BE887085249288A60020A384 /* UITableViewExt.swift */,
 				BE8870A424928F240020A384 /* UIStoryboardExt.swift */,
 				BE8870BA249297560020A384 /* Encodable+Dictionarize.swift */,
@@ -655,6 +658,7 @@
 				BE8870B2249293330020A384 /* AppUtils.swift in Sources */,
 				BE887097249289290020A384 /* NetworkService.swift in Sources */,
 				BE8870A824928F490020A384 /* UIUtils.swift in Sources */,
+				BED7AC022493D9F900C598C8 /* UIImageViewExt.swift in Sources */,
 				BE8870C124929EC90020A384 /* ErrorResponse.swift in Sources */,
 				BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */,
 				BE88709D24928C470020A384 /* SettingsViewModel.swift in Sources */,
@@ -845,6 +849,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28G784KH44;
 				INFOPLIST_FILE = WeatherForekast/AppConfig/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -864,6 +869,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28G784KH44;
 				INFOPLIST_FILE = WeatherForekast/AppConfig/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

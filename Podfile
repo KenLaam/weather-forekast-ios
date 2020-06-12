@@ -9,6 +9,7 @@ target 'WeatherForekast' do
   pod 'Moya/RxSwift'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Kingfisher'
 
   target 'WeatherForekastTests' do
     inherit! :search_paths

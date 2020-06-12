@@ -18,6 +18,7 @@ class ForecastCellViewModel: BaseViewModel, ViewModelType {
     var pressure = BehaviorRelay<String>(value: "")
     var humidity = BehaviorRelay<String>(value: "")
     var description = BehaviorRelay<String>(value: "")
+    var icon = BehaviorRelay<URL?>(value: nil)
     
     init(_ forecast: Forecast) {
         self.forecast = forecast
@@ -29,5 +30,6 @@ class ForecastCellViewModel: BaseViewModel, ViewModelType {
         pressure.accept("Pressure: \(forecast.pressure ?? 0)hPa")
         humidity.accept("Humidity: \(forecast.humidity ?? 0)%")
         description.accept("Description: \(forecast.weather[0].description ?? "")")
+        icon.accept(forecast.weather[0].iconURL)
     }
 }
