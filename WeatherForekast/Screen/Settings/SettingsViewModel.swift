@@ -20,9 +20,6 @@ class SettingsViewModel: BaseViewModel, ViewModelType {
     }
     
     func setupData() {
-        request.count = PreferencesService.shared.numOfDays
-        request.units = PreferencesService.shared.tempUnit
-        request.lang = PreferencesService.shared.language
     }
     
     func updateNumOfDays(_ count: Int) {
@@ -42,6 +39,9 @@ class SettingsViewModel: BaseViewModel, ViewModelType {
     }
     
     func finishSettings() {
+        PreferencesService.shared.numOfDays = request.count
+        PreferencesService.shared.language = request.lang
+        PreferencesService.shared.tempUnit = request.units
         didFinishUpdateSettings?(request)
         backPrevious()
     }

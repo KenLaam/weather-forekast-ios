@@ -29,34 +29,69 @@ class SettingsViewController: BaseViewController<SettingsViewModel> {
             $0?.numberOfLines = 0
             $0?.font = UIFont.preferredFont(forTextStyle: .body)
         }
-        
+        setupSliderNumOfDays()
+        setupSegmentLanguage()
+        setupSegmentUnit()
+    }
+    
+    func setupSliderNumOfDays() {
         sliderNumOfDays.minimumValue = Float(AppConfiguration.FORECAST_DAYS_MIN)
         sliderNumOfDays.maximumValue = Float(AppConfiguration.FORECAST_DAYS_MAX)
+        sliderNumOfDays.value = Float(PreferencesService.shared.numOfDays)
+        
         sliderNumOfDays.rx.value.map {
             Int($0)
         }.subscribe(onNext: { value in
             self.sliderNumOfDays.value = Float(value)
-            self.lblNumOfDays.text = "Number of days: \(value)".localized()
+            self.viewModel.updateNumOfDays(value)
         }).disposed(by: disposeBag)
-        sliderNumOfDays.value = Float(viewModel.request.count)
+        sliderNumOfDays.rx.value.map {
+            "Number of days: \(Int($0))".localized()
+        }.bind(to: lblNumOfDays.rx.text)
+            .disposed(by: disposeBag)
         
+    }
+    
+    func setupSegmentLanguage() {
+        let languages: [Language] = [.english, .vietnamese]
         segmentLanguage.removeAllSegments()
-        segmentLanguage.insertSegment(withTitle: "English", at: 0, animated: false)
-        segmentLanguage.insertSegment(withTitle: "Tiếng Việt", at: 1, animated: false)
-        segmentLanguage.selectedSegmentIndex = 0
-        
+        for (index, lang) in languages.enumerated() {
+            segmentLanguage.insertSegment(withTitle: lang.name, at: index, animated: false)
+            if viewModel.request.lang == lang {
+                segmentLanguage.selectedSegmentIndex = index
+            }
+        }
+        segmentLanguage.rx.value.map {
+            languages[$0]
+        }.subscribe(onNext: { lang in
+            self.viewModel.updateLanguage(lang)
+        }).disposed(by: disposeBag)
+    }
+    
+    func setupSegmentUnit() {
+        let units: [TemperatureUnit] = [.celsius, .fahrenheit, .kelvin]
         segmentTemp.removeAllSegments()
-        segmentTemp.insertSegment(withTitle: TemperatureUnit.celsius.name, at: 0, animated: false)
-        segmentTemp.insertSegment(withTitle: TemperatureUnit.kelvin.name, at: 0, animated: false)
-        segmentTemp.insertSegment(withTitle: TemperatureUnit.fahrenheit.name, at: 0, animated: false)
-        segmentTemp.selectedSegmentIndex = 0
+        for (index, unit) in units.enumerated() {
+            segmentTemp.insertSegment(withTitle: unit.name, at: index, animated: false)
+            if viewModel.request.units == unit {
+                segmentTemp.selectedSegmentIndex = index
+            }
+        }
+        segmentTemp.rx.value.map {
+            units[$0]
+        }.subscribe(onNext: { unit in
+            self.viewModel.updateTempUnit(unit)
+        }).disposed(by: disposeBag)
     }
     
     override func setupLocalization() {
         title = "Settings"
-        lblNumOfDays.text = "Number of days".localized()
         lblLang.text = "Language".localized()
         lblTemp.text = "Temperature Unit".localized()
+    }
+    
+    override func bindViewModel() {
+        viewModel.setupData()
     }
     
     @objc func didTapBack() {

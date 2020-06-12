@@ -17,9 +17,6 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     var request = RequestForecast()
     
     func setupData() {
-        request.count = PreferencesService.shared.numOfDays
-        request.units = PreferencesService.shared.tempUnit
-        request.lang = PreferencesService.shared.language
     }
     
     func fetchForecast(_ keyword: String? = nil) {

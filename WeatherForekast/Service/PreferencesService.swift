@@ -20,10 +20,10 @@ class PreferencesService: NSObject {
     
     var language: Language {
         get {
-            return getData(kLang) ?? AppConfiguration.DEFAULT_LANGUAGE
+            return Language.init(rawValue: getData(kLang) ?? "") ?? AppConfiguration.DEFAULT_LANGUAGE
         }
         set {
-            saveData(key: kLang, value: newValue)
+            saveData(key: kLang, value: newValue.rawValue)
         }
     }
     
@@ -39,10 +39,10 @@ class PreferencesService: NSObject {
     
     var tempUnit: TemperatureUnit {
         get {
-            return getData(kTemperatureUnit) ?? AppConfiguration.DEFAULT_TEMP_UNIT
+            return TemperatureUnit.init(rawValue: getData(kTemperatureUnit) ?? "") ?? AppConfiguration.DEFAULT_TEMP_UNIT
         }
         set {
-            saveData(key: kTemperatureUnit, value: newValue)
+            saveData(key: kTemperatureUnit, value: newValue.rawValue)
         }
     }
     

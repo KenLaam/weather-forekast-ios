@@ -14,9 +14,15 @@ class RequestForecast: Encodable, Equatable {
     }
     
     var keyword: String?
-    var count: Int = AppConfiguration.FORECAST_DAYS_MIN
-    var units: TemperatureUnit?
-    var lang: Language = AppConfiguration.DEFAULT_LANGUAGE
+    var count: Int
+    var units: TemperatureUnit
+    var lang: Language
+    
+    init() {
+        count = PreferencesService.shared.numOfDays
+        units = PreferencesService.shared.tempUnit
+        lang = PreferencesService.shared.language
+    }
     
     enum CodingKeys: String, CodingKey {
         case keyword = "q"

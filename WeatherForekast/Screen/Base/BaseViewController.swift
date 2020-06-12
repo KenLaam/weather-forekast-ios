@@ -16,8 +16,8 @@ class BaseViewController<VM: ViewModelType>: UIViewController, BindableType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         bindViewModel()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
