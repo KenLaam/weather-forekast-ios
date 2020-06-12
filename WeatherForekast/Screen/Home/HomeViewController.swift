@@ -7,18 +7,43 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     @IBOutlet weak var tableForecasts: UITableView!
     lazy var refreshControl = UIRefreshControl()
     
+    lazy var searchBar = UISearchBar()
+    lazy var btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchBar))
+    lazy var btnSettings = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(showSettings))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchAtStartup()
+        showSearchBar()
     }
     
     override func setupUI() {
+        navigationItem.rightBarButtonItem = btnSearch
+        
+        searchBar.rx.cancelButtonClicked.subscribe(onNext: { _ in
+            self.hideSearchBar()
+        }).disposed(by: disposeBag)
+        
+        searchBar.rx.searchButtonClicked.subscribe(onNext: { _ in
+            self.searchBar.resignFirstResponder()
+        }).disposed(by: disposeBag)
+        
+        searchBar.rx.text.orEmpty
+            .debounce(.microseconds(2310), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] keyword in
+                guard let `self` = self else { return }
+                if keyword.count > 3 {
+                    self.viewModel.fetchForecast(keyword)
+                }
+            }).disposed(by: disposeBag)
+        
         refreshControl.addTarget(self, action: #selector(onRefreshTable), for: .valueChanged)
         
         tableForecasts.delegate = self
@@ -30,11 +55,11 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func setupLocalization() {
         title = "Weather Forekast"
+        searchBar.placeholder = "Search city for weather forecast"
     }
     
     override func bindViewModel() {
-        let input = HomeViewModel.Input()
-        let _ = viewModel.transform(input)
+        viewModel.setupObs()
         
         viewModel.forecast.bind(to: tableForecasts.rx.items) { tableView, row, item in
             let indexPath = IndexPath(row: row, section: 0)
@@ -50,13 +75,27 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         }).disposed(by: disposeBag)
     }
     
-    func fetchAtStartup() {
-        tableForecasts.contentOffset = CGPoint(x: 0, y: -refreshControl.bounds.height)
+    // MARK: Actions
+    @objc func onRefreshTable() {
         viewModel.onPullToRefresh.onNext(())
     }
     
-    @objc func onRefreshTable() {
-        viewModel.onPullToRefresh.onNext(())
+    @objc func showSettings() {
+        debugPrint("Settings")
+    }
+    
+    @objc func showSearchBar() {
+        navigationItem.rightBarButtonItem = nil
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.titleView = searchBar
+        searchBar.setShowsCancelButton(true, animated: true)
+        searchBar.becomeFirstResponder()
+    }
+    
+    @objc func hideSearchBar() {
+        navigationItem.titleView = nil
+        navigationItem.rightBarButtonItem = btnSettings
+        navigationItem.leftBarButtonItem = btnSearch
     }
 }
 

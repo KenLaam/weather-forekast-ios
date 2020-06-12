@@ -11,39 +11,35 @@ import RxSwift
 import RxCocoa
 
 class HomeViewModel: BaseViewModel, ViewModelType {
-    struct Input {
-    }
-    
-    struct Output {
-    }
     
     var forecast = BehaviorRelay<[Forecast]>(value: [])
     var onPullToRefresh = PublishSubject<Void>()
     var refreshingIndicator = PublishSubject<Bool>()
+    var toggleSearchBar = BehaviorRelay<Bool>(value: false)
     
     var request = RequestForecast()
     
-    func transform(_ input: Input) -> Output {
+    func setupObs() {
         request.keyword = "saigon"
-        request.count = 7
-        request.units = .celsius
         onPullToRefresh.subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             self.refreshingIndicator.onNext(true)
-            self.fetchForecast { lstForecast in
-                self.forecast.accept(lstForecast)
-            }
+            self.fetchForecast()
         }).disposed(by: disposeBag)
-        return Output()
     }
     
-    func fetchForecast(completion: @escaping ([Forecast]) -> Void) {
+    func fetchForecast(_ keyword: String? = nil) {
+        if let keyword = keyword {
+            request.keyword = keyword
+        }
+        request.count = 7
+        request.units = .celsius
         NetworkService.shared.fetchForecast(request: request)
             .subscribe(onSuccess: { [weak self] response in
                 guard let `self` = self else { return }
                 self.refreshingIndicator.onNext(false)
                 self.error.onNext(nil)
-                completion(response.lstForecast)
+                self.forecast.accept(response.lstForecast)
             }) { [weak self] error in
                 guard let `self` = self else { return }
                 self.refreshingIndicator.onNext(false)

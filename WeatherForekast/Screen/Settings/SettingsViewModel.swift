@@ -9,13 +9,7 @@
 import Foundation
 
 class SettingsViewModel: BaseViewModel, ViewModelType {
-    struct Input {
-    }
-    
-    struct Output {
-    }
-    
-    func transform(_ input: Input) -> Output {
-        return Output()
+    func setupObs() {
+        
     }
 }
