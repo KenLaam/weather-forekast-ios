@@ -13,16 +13,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     @IBOutlet weak var tableForecasts: UITableView!
     
-    lazy var searchBar = UISearchBar()
-    lazy var btnSearch = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchBar))
+    @IBOutlet weak var searchBar: UISearchBar!
     lazy var btnSettings = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(showSettings))
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        hideSearchBar()
-    }
-    
     override func setupUI() {
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationItem.rightBarButtonItem = btnSettings
         setupSearchBar()
         
         tableForecasts.delegate = self
@@ -34,7 +30,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     func setupSearchBar() {
         searchBar.rx.cancelButtonClicked.subscribe(onNext: { _ in
-            self.hideSearchBar()
+            self.searchBar.setShowsCancelButton(false, animated: true)
+            self.searchBar.resignFirstResponder()
         }).disposed(by: disposeBag)
         
         searchBar.rx.textDidBeginEditing.subscribe { _ in
@@ -75,25 +72,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     // MARK: Actions
     @objc func showSettings() {
         viewModel.openSettings()
-    }
-    
-    @objc func showSearchBar() {
-        navigationItem.rightBarButtonItem = nil
-        navigationItem.leftBarButtonItem = nil
-        navigationItem.titleView = searchBar
-        searchBar.setShowsCancelButton(true, animated: false)
-        searchBar.alpha = 0.0
-        UIView.animate(withDuration: 0.23, animations: {
-            self.searchBar.alpha = 1.0
-        }) { finshed in
-            self.searchBar.becomeFirstResponder()
-        }
-    }
-    
-    @objc func hideSearchBar() {
-        navigationItem.titleView = nil
-        navigationItem.rightBarButtonItem = btnSettings
-        navigationItem.leftBarButtonItem = btnSearch
     }
 }
 
