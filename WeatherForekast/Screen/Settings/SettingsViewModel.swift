@@ -9,7 +9,7 @@
 import Foundation
 
 class SettingsViewModel: BaseViewModel, ViewModelType {
-    func setupObs() {
+    func setupData() {
         
     }
 }

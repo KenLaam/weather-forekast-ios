@@ -23,7 +23,7 @@ class ForecastCellViewModel: BaseViewModel, ViewModelType {
         self.forecast = forecast
     }
     
-    func setupObs() {
+    func setupData() {
         date.accept("Date: \(forecast.dateTime)")
         temp.accept("Average temperature: \(forecast.tempAverage)")
         pressure.accept("Pressure: \(forecast.pressure ?? 0)hPa")

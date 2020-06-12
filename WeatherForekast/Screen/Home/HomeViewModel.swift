@@ -19,7 +19,7 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     
     var request = RequestForecast()
     
-    func setupObs() {
+    func setupData() {
         request.keyword = "saigon"
         onPullToRefresh.subscribe(onNext: { [weak self] _ in
             guard let `self` = self else { return }

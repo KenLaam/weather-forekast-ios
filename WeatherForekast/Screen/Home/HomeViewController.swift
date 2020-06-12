@@ -59,7 +59,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func bindViewModel() {
-        viewModel.setupObs()
+        viewModel.setupData()
         
         viewModel.forecast.bind(to: tableForecasts.rx.items) { tableView, row, item in
             let indexPath = IndexPath(row: row, section: 0)

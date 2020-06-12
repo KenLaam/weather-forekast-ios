@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol ViewModelType {
-    func setupObs()
+    func setupData()
 }
 
 class BaseViewModel {
