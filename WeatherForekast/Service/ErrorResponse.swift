@@ -14,6 +14,7 @@ class ErrorResponse: Error {
         case empty
         case timeout
         case notFound
+        case minChars
         case others
     }
     
@@ -28,6 +29,8 @@ class ErrorResponse: Error {
             return "ERROR_EMPTY".localized()
         case .notFound:
             return "ERROR_NOT_FOUND".localized()
+        case .minChars:
+            return "ERROR_MIN_CHARACTER".localized()
         default:
             return "ERROR_OTHER".localized()
         }

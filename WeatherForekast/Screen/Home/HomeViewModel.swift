@@ -20,7 +20,10 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     }
     
     func fetchForecast(_ keyword: String? = nil) {
-        guard let keyword = keyword, keyword.count >= 3 else { return }
+        guard let keyword = keyword, keyword.count >= 3 else {
+            error.onNext(ErrorResponse(.minChars))
+            return
+        }
         request.keyword = keyword
         isLoading.accept(true)
         NetworkService.shared.fetchForecast(request: request)
