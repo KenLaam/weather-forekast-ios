@@ -28,4 +28,5 @@
 "ERROR_TIMEOUT" = "Time out.\nPlease try again!";
 "ERROR_EMPTY" = "Nothing here.\nTry search your city for weather forecast!";
 "ERROR_NOT_FOUND" = "City not found!\nTry again!";
+"ERROR_MIN_CHARACTER" = "Please input at least 3 characters!";
 "ERROR_OTHER" = "Something went wrong.\nPlease try again!";
