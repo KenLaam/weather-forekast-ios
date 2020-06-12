@@ -20,9 +20,9 @@ class SettingsViewController: BaseViewController<SettingsViewModel> {
     @IBOutlet weak var segmentTemp: UISegmentedControl!
     
     override func setupUI() {
-        let btnBack = UIBarButtonItem(title: "Back".localized(), style: .plain, target: self, action: #selector(didTapBack))
+        let btnBack = UIBarButtonItem(title: "BTN_BACK".localized(), style: .plain, target: self, action: #selector(didTapBack))
         navigationItem.leftBarButtonItem = btnBack
-        let btnDone = UIBarButtonItem(title: "Done".localized(), style: .done, target: self, action: #selector(didTapDone))
+        let btnDone = UIBarButtonItem(title: "BTN_DONE".localized(), style: .done, target: self, action: #selector(didTapDone))
         navigationItem.rightBarButtonItem = btnDone
         
         [lblNumOfDays, lblLang, lblTemp].forEach {
@@ -46,7 +46,7 @@ class SettingsViewController: BaseViewController<SettingsViewModel> {
             self.viewModel.updateNumOfDays(value)
         }).disposed(by: disposeBag)
         sliderNumOfDays.rx.value.map {
-            "Number of days: \(Int($0))".localized()
+            "SETTINGS_NO_DAYS".localizedFormat(Int($0))
         }.bind(to: lblNumOfDays.rx.text)
             .disposed(by: disposeBag)
         
@@ -85,9 +85,9 @@ class SettingsViewController: BaseViewController<SettingsViewModel> {
     }
     
     override func setupLocalization() {
-        title = "Settings"
-        lblLang.text = "Language".localized()
-        lblTemp.text = "Temperature Unit".localized()
+        title = "SETTING_TITLE".localized()
+        lblLang.text = "SETTINGS_LANG".localized()
+        lblTemp.text = "SETTINGS_TEMP_UNIT".localized()
     }
     
     override func bindViewModel() {

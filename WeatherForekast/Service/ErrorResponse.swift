@@ -21,15 +21,15 @@ class ErrorResponse: Error {
     var message: String {
         switch type {
         case .offline:
-            return "Your connection appears to be offline.\nPlease check your connection!"
+            return "ERROR_OFFLINE".localized()
         case .timeout:
-            return "Time out.\nPlease try again!"
+            return "ERROR_TIMEOUT".localized()
         case .empty:
-            return "Nothing here.\nTry search your city for weather forecast!"
+            return "ERROR_EMPTY".localized()
         case .notFound:
-            return "City not found!\nTry again!"
+            return "ERROR_NOT_FOUND".localized()
         default:
-            return "Something went wrong.\nPlease try again!"
+            return "ERROR_OTHER".localized()
         }
     }
     

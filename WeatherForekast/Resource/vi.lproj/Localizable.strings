@@ -6,7 +6,7 @@
   Copyright © 2020 Ken Lam. All rights reserved.
 */
 
-"APP_NAME" = "Weather Forekast";
+"APP_NAME" = "Dự báo thời tuyết";
 
 "SEARCH_PLACEHOLDER" = "Thời tiết ở thành phố bạn";
 
@@ -16,10 +16,10 @@
 "CELL_DATE" = "Ngày: %@";
 "CELL_AVERAGE_TEMP" = "Nhiệt độ trung bình: %@";
 "CELL_PRESSURE" = "Áp suất: %dhPa";
-"CELL_HUMIDITY" = "Độ ẩm: %d%";
+"CELL_HUMIDITY" = "Độ ẩm: %d%%";
 "CELL_DESCRIPTION" = "Mô tả: %@";
 
-"SETTING_TITLE" = "Cài đặt"
+"SETTING_TITLE" = "Cài đặt";
 "SETTINGS_NO_DAYS" = "Số ngày dự báo: %d";
 "SETTINGS_LANG" = "Ngôn ngữ:";
 "SETTINGS_TEMP_UNIT" = "Đơn vị nhiệt độ:";

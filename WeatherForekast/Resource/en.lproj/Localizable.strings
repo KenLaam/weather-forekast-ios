@@ -16,10 +16,10 @@
 "CELL_DATE" = "Date: %@";
 "CELL_AVERAGE_TEMP" = "Avg Temperature: %@";
 "CELL_PRESSURE" = "Pressure: %dhPa";
-"CELL_HUMIDITY" = "Humidity: %d%";
+"CELL_HUMIDITY" = "Humidity: %d%%";
 "CELL_DESCRIPTION" = "Description: %@";
 
-"SETTING_TITLE" = "Settings"
+"SETTING_TITLE" = "Settings";
 "SETTINGS_NO_DAYS" = "Number of days: %d";
 "SETTINGS_LANG" = "Language:";
 "SETTINGS_TEMP_UNIT" = "Temperature Unit:";

@@ -25,11 +25,11 @@ class ForecastCellViewModel: BaseViewModel, ViewModelType {
     }
     
     func setupData() {
-        date.accept("Date: \(forecast.dateTime)")
-        temp.accept("Average temperature: \(forecast.tempAverage)")
-        pressure.accept("Pressure: \(forecast.pressure ?? 0)hPa")
-        humidity.accept("Humidity: \(forecast.humidity ?? 0)%")
-        description.accept("Description: \(forecast.weather[0].description ?? "")")
+        date.accept("CELL_DATE".localizedFormat(forecast.dateTime))
+        temp.accept("CELL_AVERAGE_TEMP".localizedFormat(forecast.tempAverage))
+        pressure.accept("CELL_PRESSURE".localizedFormat(forecast.pressure ?? 0))
+        humidity.accept("CELL_HUMIDITY".localizedFormat(forecast.humidity ?? 0))
+        description.accept("CELL_DESCRIPTION".localizedFormat(forecast.weather[0].description ?? ""))
         icon.accept(forecast.weather[0].iconURL)
     }
 }
