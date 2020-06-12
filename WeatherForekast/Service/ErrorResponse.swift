@@ -11,6 +11,7 @@ import Foundation
 class ErrorResponse: Error {
     enum ErrorType {
         case offline
+        case empty
         case timeout
         case notFound
         case others
@@ -23,8 +24,10 @@ class ErrorResponse: Error {
             return "Your connection appears to be offline.\nPlease check your connection!"
         case .timeout:
             return "Time out.\nPlease try again!"
+        case .empty:
+            return "Nothing here.\nTry search your city for weather forecast!"
         case .notFound:
-            return "City not found! "
+            return "City not found!\nTry again!"
         default:
             return "Something went wrong.\nPlease try again!"
         }

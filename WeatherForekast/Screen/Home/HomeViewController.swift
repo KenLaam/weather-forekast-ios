@@ -19,35 +19,42 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showSearchBar()
     }
     
     override func setupUI() {
-        navigationItem.rightBarButtonItem = btnSettings
-        navigationItem.leftBarButtonItem = btnSearch
-        
-        searchBar.rx.cancelButtonClicked.subscribe(onNext: { _ in
-            self.hideSearchBar()
-        }).disposed(by: disposeBag)
-        
-        searchBar.rx.searchButtonClicked.subscribe(onNext: { _ in
-            self.searchBar.resignFirstResponder()
-            self.viewModel.fetchForecast(self.searchBar.text)
-        }).disposed(by: disposeBag)
+        setupSearchBar()
         
         tableForecasts.delegate = self
         tableForecasts.register(cellType: ForecastTableViewCell.self)
         tableForecasts.allowsSelection = false
         tableForecasts.tableFooterView = UIView(frame: .zero)
+        tableForecasts.toggleErrorBg(ErrorResponse(.empty))
+    }
+    
+    func setupSearchBar() {
+        searchBar.rx.cancelButtonClicked.subscribe(onNext: { _ in
+            self.hideSearchBar()
+        }).disposed(by: disposeBag)
+        
+        searchBar.rx.textDidBeginEditing.subscribe { _ in
+            self.searchBar.setShowsCancelButton(true, animated: true)
+        }.disposed(by: disposeBag)
+        
+        searchBar.rx.searchButtonClicked.subscribe(onNext: { _ in
+            self.searchBar.resignFirstResponder()
+            self.searchBar.setShowsCancelButton(false, animated: true)
+            self.viewModel.fetchForecast(self.searchBar.text)
+        }).disposed(by: disposeBag)
     }
     
     override func setupLocalization() {
         title = "Weather Forekast".localized()
-        searchBar.placeholder = "Search city".localized()
+        searchBar.placeholder = "Weather in your city".localized()
     }
     
     override func bindViewModel() {
         viewModel.setupData()
-        
         viewModel.forecast.bind(to: tableForecasts.rx.items) { tableView, row, item in
             let indexPath = IndexPath(row: row, section: 0)
             var cell = tableView.dequeueReusableCell(with: ForecastTableViewCell.self, for: indexPath)
