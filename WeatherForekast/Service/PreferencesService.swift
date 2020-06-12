@@ -14,15 +14,26 @@ class PreferencesService: NSObject {
     static let shared = PreferencesService()
     private let userDefaults = UserDefaults.standard
     
+    private let kNumOfDays = "number of days"
     private let kLang = "language"
     private let kTemperatureUnit = "temperature unit"
     
-    var langCode: String {
+    var language: Language {
         get {
-            return getData(kLang) ?? AppUtils.currentLanguageCode()
+            return getData(kLang) ?? AppConfiguration.DEFAULT_LANGUAGE
         }
         set {
             saveData(key: kLang, value: newValue)
+        }
+    }
+    
+    var numOfDays: Int {
+        get {
+            return getData(kNumOfDays) ?? AppConfiguration.FORECAST_DAYS_DEFAULT
+        }
+        
+        set {
+            return saveData(key: kNumOfDays, value: newValue)
         }
     }
     

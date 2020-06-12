@@ -15,9 +15,80 @@
                     <view key="view" contentMode="scaleToFill" id="3Ly-0d-psi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="bD2-a0-4Zt">
+                                <rect key="frame" x="16" y="76" width="382" height="241.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BHb-6b-2wd">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEW-hf-dcF">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lO8-lg-Bgi">
+                                                <rect key="frame" x="-2" y="28.5" width="386" height="31"/>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="N8J-Y6-CI8">
+                                        <rect key="frame" x="0.0" y="90.5" width="382" height="59.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAm-6o-edF">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-Vs-Hw0">
+                                                <rect key="frame" x="0.0" y="28.5" width="382" height="32"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YMe-vc-rPa">
+                                        <rect key="frame" x="0.0" y="182" width="382" height="59.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ov-v3-fTE">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EUO-PV-8fm">
+                                                <rect key="frame" x="0.0" y="28.5" width="382" height="32"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                    <segment title=""/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bD2-a0-4Zt" firstAttribute="leading" secondItem="KfS-eZ-vTi" secondAttribute="leading" constant="16" id="Etd-wb-XIF"/>
+                            <constraint firstItem="bD2-a0-4Zt" firstAttribute="top" secondItem="KfS-eZ-vTi" secondAttribute="top" constant="32" id="Xbd-XB-0kK"/>
+                            <constraint firstItem="bD2-a0-4Zt" firstAttribute="centerX" secondItem="KfS-eZ-vTi" secondAttribute="centerX" id="gJG-EU-QEa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KfS-eZ-vTi"/>
                     </view>
+                    <connections>
+                        <outlet property="lblLang" destination="tAm-6o-edF" id="TqN-J0-FgU"/>
+                        <outlet property="lblNumOfDays" destination="KEW-hf-dcF" id="lCL-8S-hz2"/>
+                        <outlet property="lblTemp" destination="0Ov-v3-fTE" id="5ss-ir-KHw"/>
+                        <outlet property="segmentLanguage" destination="Yqy-Vs-Hw0" id="q7r-nF-baL"/>
+                        <outlet property="segmentTemp" destination="EUO-PV-8fm" id="ba2-tX-baz"/>
+                        <outlet property="sliderNumOfDays" destination="lO8-lg-Bgi" id="q5M-FM-l44"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9k-bH-uOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

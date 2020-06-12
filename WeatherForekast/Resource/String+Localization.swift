@@ -23,7 +23,7 @@ extension String {
     
     func localized(using tableName: String?, in bundle: Bundle?) -> String {
         let bundle: Bundle = bundle ?? .main
-        if let path = bundle.path(forResource: PreferencesService.shared.langCode, ofType: "lproj"),
+        if let path = bundle.path(forResource: PreferencesService.shared.language.rawValue, ofType: "lproj"),
             let bundle = Bundle(path: path) {
             return bundle.localizedString(forKey: self, value: nil, table: tableName)
         }

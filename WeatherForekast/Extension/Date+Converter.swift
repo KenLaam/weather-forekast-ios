@@ -12,7 +12,7 @@ extension Date {
     func toString(_ format: String = AppConfiguration.DEFAULT_DATE_FORMAT) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
-        formatter.locale = Locale(identifier: PreferencesService.shared.langCode)
+        formatter.locale = Locale(identifier: PreferencesService.shared.language.rawValue)
         return formatter.string(from: self)
     }
 }

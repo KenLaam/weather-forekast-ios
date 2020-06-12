@@ -17,13 +17,14 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     var request = RequestForecast()
     
     func setupData() {
+        request.count = PreferencesService.shared.numOfDays
+        request.units = PreferencesService.shared.tempUnit
+        request.lang = PreferencesService.shared.language
     }
     
     func fetchForecast(_ keyword: String? = nil) {
         guard let keyword = keyword, keyword.count >= 3 else { return }
         request.keyword = keyword
-        request.count = 7
-        request.units = .celsius
         isLoading.accept(true)
         NetworkService.shared.fetchForecast(request: request)
             .subscribe(onSuccess: { [weak self] response in
@@ -46,6 +47,18 @@ class HomeViewModel: BaseViewModel, ViewModelType {
     }
     
     func openSettings() {
-        Router.shared.toSettings()
+        Router.shared.toSettings { [weak self] request in
+            guard let `self` = self else { return }
+            if self.request != request {
+                self.updateRequest(request)
+            }
+        }
+    }
+    
+    func updateRequest(_ newRequest: RequestForecast) {
+        request.count = newRequest.count
+        request.lang = newRequest.lang
+        request.units = newRequest.units
+        fetchForecast(request.keyword)
     }
 }

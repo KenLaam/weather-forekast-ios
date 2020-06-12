@@ -10,7 +10,7 @@ import UIKit
 
 enum Screen {
     case home
-    case settings
+    case settings(_ handler: HandlerUpdateSettings)
 }
 
 extension Screen {
@@ -23,9 +23,9 @@ extension Screen {
                 let nav = UINavigationController(rootViewController: homeVC)
                 vc = nav
             }
-        case .settings:
+        case .settings(let handler):
             if var settingsVC = UIUtils.getViewController(with: SettingsViewController.className, in: .main) as? SettingsViewController {
-                settingsVC.bindVM(to: SettingsViewModel())
+                settingsVC.bindVM(to: SettingsViewModel(handler))
                 vc = settingsVC
             }
         @unknown default:
