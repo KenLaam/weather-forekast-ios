@@ -114,7 +114,7 @@
 		BE8870C42492A5A10020A384 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 		BE8870C72492A73B0020A384 /* ForecastCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCellViewModel.swift; sourceTree = "<group>"; };
 		BE8870C92492A7F50020A384 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		BEA70AA72492863A00B4D57A /* Forekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA70AA72492863A00B4D57A /* WeatherForekast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForekast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70AAA2492863A00B4D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA70AAC2492863A00B4D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BEA70AB12492863A00B4D57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 		BEA70AA82492863A00B4D57A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEA70AA72492863A00B4D57A /* Forekast.app */,
+				BEA70AA72492863A00B4D57A /* WeatherForekast.app */,
 				BEA70ABD2492863C00B4D57A /* WeatherForekastTests.xctest */,
 				BEA70AC82492863C00B4D57A /* WeatherForekastUITests.xctest */,
 			);
@@ -405,7 +405,7 @@
 			);
 			name = WeatherForekast;
 			productName = WeatherForekast;
-			productReference = BEA70AA72492863A00B4D57A /* Forekast.app */;
+			productReference = BEA70AA72492863A00B4D57A /* WeatherForekast.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BEA70ABC2492863C00B4D57A /* WeatherForekastTests */ = {
@@ -857,7 +857,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenk11.WeatherForekast;
-				PRODUCT_NAME = Forekast;
+				PRODUCT_NAME = WeatherForekast;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -877,7 +877,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenk11.WeatherForekast;
-				PRODUCT_NAME = Forekast;
+				PRODUCT_NAME = WeatherForekast;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
