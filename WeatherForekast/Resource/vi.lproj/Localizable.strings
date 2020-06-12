@@ -6,5 +6,26 @@
   Copyright © 2020 Ken Lam. All rights reserved.
 */
 
-"Weather Forekast" = "Weather Forekast";
-"Settings" = "Cài đặt";
+"APP_NAME" = "Weather Forekast";
+
+"SEARCH_PLACEHOLDER" = "Thời tiết ở thành phố bạn";
+
+"BTN_DONE" = "Xong";
+"BTN_BACK" = "Trở về";
+
+"CELL_DATE" = "Ngày: %@";
+"CELL_AVERAGE_TEMP" = "Nhiệt độ trung bình: %@";
+"CELL_PRESSURE" = "Áp suất: %dhPa";
+"CELL_HUMIDITY" = "Độ ẩm: %d%";
+"CELL_DESCRIPTION" = "Mô tả: %@";
+
+"SETTING_TITLE" = "Cài đặt"
+"SETTINGS_NO_DAYS" = "Số ngày dự báo: %d";
+"SETTINGS_LANG" = "Ngôn ngữ:";
+"SETTINGS_TEMP_UNIT" = "Đơn vị nhiệt độ:";
+
+"ERROR_OFFLINE" = "Đã mất kết nối.\nVui lòng kiểm tra lại kết nối!";
+"ERROR_TIMEOUT" = "Hết thời gian chờ.\nVui lòng thử lại!";
+"ERROR_EMPTY" = "Hãy tìm thành phố của bạn để biết dự báo thời tiết!";
+"ERROR_NOT_FOUND" = "Không tìm thấy thành phố!\nVui lòng thử lại!";
+"ERROR_OTHER" = "Có lỗi xảy ra.\nHãy thử lại!";
