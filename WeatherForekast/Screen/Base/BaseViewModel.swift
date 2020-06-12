@@ -11,12 +11,10 @@ import RxSwift
 import RxCocoa
 
 protocol ViewModelType {
-    associatedtype Input
-    associatedtype Output
-    
-    func transform(_ input: Input) -> Output
+    func setupData()
 }
 
 class BaseViewModel {
     var disposeBag = DisposeBag()
+    var error = PublishSubject<ErrorResponse?>()
 }

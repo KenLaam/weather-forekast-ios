@@ -15,6 +15,7 @@ class PreferencesService: NSObject {
     private let userDefaults = UserDefaults.standard
     
     private let kLang = "language"
+    private let kTemperatureUnit = "temperature unit"
     
     var langCode: String {
         get {
@@ -22,6 +23,15 @@ class PreferencesService: NSObject {
         }
         set {
             saveData(key: kLang, value: newValue)
+        }
+    }
+    
+    var tempUnit: TemperatureUnit {
+        get {
+            return getData(kTemperatureUnit) ?? AppConfiguration.DEFAULT_TEMP_UNIT
+        }
+        set {
+            saveData(key: kTemperatureUnit, value: newValue)
         }
     }
     

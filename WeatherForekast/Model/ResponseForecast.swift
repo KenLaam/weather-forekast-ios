@@ -10,11 +10,17 @@ import Foundation
 
 class ResponseForecast: Decodable {
     let city: City?
-    let lstForecast: [Forecast]
+    let code: String
+    let lstForecast: [Forecast]?
     
     enum CodingKeys: String, CodingKey {
         case city
+        case code = "cod"
         case lstForecast = "list"
+    }
+    
+    var isNotFound: Bool {
+        return code == "404"
     }
 }
 
@@ -33,9 +39,21 @@ class Forecast: Decodable {
     let pressure: Int?
     let humidity: Int?
     let temperature: Temperature
+    let weather: [Weather]
+    
+    var dateTime: String {
+        guard let timestamp = date else { return "" }
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        return date.toString()
+    }
+    
+    var tempAverage: String {
+        guard let day = temperature.day else { return "" }
+        return String(format: "%.0f\u{00B0}%@", day, PreferencesService.shared.tempUnit.symbol)
+    }
     
     enum CodingKeys: String, CodingKey {
-        case pressure, humidity
+        case pressure, humidity, weather
         case date = "dt"
         case temperature = "temp"
     }
@@ -60,8 +78,8 @@ class Weather: Decodable {
         case main, description, icon
     }
     
-    var iconURL: String? {
-        guard let icon = icon else { return nil}
-        return "http://openweathermap.org/img/wn/\(icon).png"
+    var iconURL: URL? {
+        guard let icon = icon else { return nil }
+        return URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")
     }
 }

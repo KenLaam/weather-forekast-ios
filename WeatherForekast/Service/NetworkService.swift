@@ -14,7 +14,8 @@ import RxCocoa
 struct NetworkService {
     private init() {}
     static let shared = NetworkService()
-    let provider = MoyaProvider<WeatherApi>(plugins: [NetworkLoggerPlugin()])
+    let provider = MoyaProvider<WeatherApi>(plugins: [NetworkLoggerPlugin(configuration: .init(formatter: .init(),
+    logOptions: .verbose))])
     
     func fetchForecast(request params: RequestForecast) -> Single<ResponseForecast> {
         return request(.forecastDaily(params))
