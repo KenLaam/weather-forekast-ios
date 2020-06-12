@@ -17,6 +17,13 @@ class ForecastTableViewCell: BaseTableViewCell<ForecastCellViewModel> {
     @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     
+    override func setupUI() {
+        [lblDate, lblTemp, lblPressure, lblHumidity, lblDescription].forEach {
+            $0?.numberOfLines = 0
+            $0?.font = UIFont.preferredFont(forTextStyle: .body)
+        }
+    }
+    
     override func bindViewModel() {
         let input = ForecastCellViewModel.Input()
         let _ = viewModel.transform(input)
