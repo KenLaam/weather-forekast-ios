@@ -28,8 +28,6 @@ extension Screen {
                 settingsVC.bindVM(to: SettingsViewModel(handler))
                 vc = settingsVC
             }
-        @unknown default:
-            break
         }
         return vc
     }
