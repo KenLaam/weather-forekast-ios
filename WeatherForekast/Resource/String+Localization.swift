@@ -26,8 +26,7 @@ extension String {
         if let path = bundle.path(forResource: PreferencesService.shared.language.rawValue, ofType: "lproj"),
             let bundle = Bundle(path: path) {
             return bundle.localizedString(forKey: self, value: nil, table: tableName)
-        }
-        else if let path = bundle.path(forResource: "Base", ofType: "lproj"),
+        } else if let path = bundle.path(forResource: "Base", ofType: "lproj"),
             let bundle = Bundle(path: path) {
             return bundle.localizedString(forKey: self, value: nil, table: tableName)
         }

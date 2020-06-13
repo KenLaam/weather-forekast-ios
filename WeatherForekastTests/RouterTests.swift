@@ -11,6 +11,13 @@ import XCTest
 
 class RouterTests: XCTestCase {
     
+    func testUtilsGetVC() {
+        let homeVC = UIUtils.getViewController(in: .main)
+        XCTAssert(homeVC is HomeViewController)
+        let settingVC = UIUtils.getViewController(with: SettingsViewController.className, in: .main)
+        XCTAssert(settingVC is SettingsViewController)
+    }
+    
     func testCreateHomeVC() {
         let navHome = Screen.home.createViewController()
         XCTAssert(navHome is UINavigationController)
@@ -22,5 +29,25 @@ class RouterTests: XCTestCase {
         }
         let settingVC = Screen.settings(handler).createViewController()
         XCTAssert(settingVC is SettingsViewController)
+    }
+    
+    func testFlow() {
+        Router.shared.toHome()
+        XCTAssert(Router.shared.coordinator.currentViewController is HomeViewController)
+        
+        let handler: HandlerUpdateSettings = { request in
+        }
+        Router.shared.toSettings(handler: handler)
+        XCTAssert(Router.shared.coordinator.currentViewController is SettingsViewController)
+    }
+    
+    func testFlowBackToHome() {
+        Router.shared.toHome()
+        
+        Router.shared.pop()
+        XCTAssert(Router.shared.coordinator.currentViewController is HomeViewController)
+        
+        Router.shared.popToHome()
+        XCTAssert(Router.shared.coordinator.currentViewController is HomeViewController)
     }
 }

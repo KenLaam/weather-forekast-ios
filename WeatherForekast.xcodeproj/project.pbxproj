@@ -15,6 +15,8 @@
 		BE143CE52493D29600F94FC4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE143CE42493D29600F94FC4 /* LoadingView.swift */; };
 		BE143CE72493D2CE00F94FC4 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE143CE62493D2CE00F94FC4 /* LoadingView.xib */; };
 		BE5EB70E249476E20003DB8B /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB70D249476E20003DB8B /* RouterTests.swift */; };
+		BE5EB7102494C9B60003DB8B /* PreferencesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB70F2494C9B60003DB8B /* PreferencesTest.swift */; };
+		BE5EB7132494CD870003DB8B /* TestErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB7122494CD870003DB8B /* TestErrorResponse.swift */; };
 		BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887083249288900020A384 /* ClassNameProtocol.swift */; };
 		BE887086249288A60020A384 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887085249288A60020A384 /* UITableViewExt.swift */; };
 		BE887089249288DC0020A384 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887088249288DC0020A384 /* Router.swift */; };
@@ -86,6 +88,8 @@
 		BE143CE42493D29600F94FC4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BE143CE62493D2CE00F94FC4 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		BE5EB70D249476E20003DB8B /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		BE5EB70F2494C9B60003DB8B /* PreferencesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTest.swift; sourceTree = "<group>"; };
+		BE5EB7122494CD870003DB8B /* TestErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestErrorResponse.swift; sourceTree = "<group>"; };
 		BE887083249288900020A384 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		BE887085249288A60020A384 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		BE887088249288DC0020A384 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -185,6 +189,14 @@
 				BE143CE62493D2CE00F94FC4 /* LoadingView.xib */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		BE5EB7112494CD7E0003DB8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE5EB7122494CD870003DB8B /* TestErrorResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BE88707E249286F80020A384 /* AppConfig */ = {
@@ -362,10 +374,12 @@
 		BEA70AC02492863C00B4D57A /* WeatherForekastTests */ = {
 			isa = PBXGroup;
 			children = (
-				BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */,
-				BEA9929B249401B900F05B79 /* ExtensionTests.swift */,
 				BEA70AC32492863C00B4D57A /* Info.plist */,
+				BEA9929B249401B900F05B79 /* ExtensionTests.swift */,
+				BE5EB70F2494C9B60003DB8B /* PreferencesTest.swift */,
 				BE5EB70D249476E20003DB8B /* RouterTests.swift */,
+				BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */,
+				BE5EB7112494CD7E0003DB8B /* Model */,
 			);
 			path = WeatherForekastTests;
 			sourceTree = "<group>";
@@ -679,6 +693,8 @@
 			files = (
 				BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */,
 				BE5EB70E249476E20003DB8B /* RouterTests.swift in Sources */,
+				BE5EB7132494CD870003DB8B /* TestErrorResponse.swift in Sources */,
+				BE5EB7102494C9B60003DB8B /* PreferencesTest.swift in Sources */,
 				BEA9929C249401B900F05B79 /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,5 +25,24 @@ class ExtensionTests: XCTestCase {
     }
     
     func testDateTime() {
+        let today = Date()
+        let format = "dd/MM.yyyy"
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        let todayStr = formatter.string(from: today)
+        XCTAssertEqual(today.toString(format), todayStr)
+    }
+    
+    func testLocalizationEnglish() {
+        PreferencesService.shared.language = .english
+        XCTAssertEqual("SETTINGS_TITLE".localized(), "Settings")
+        XCTAssertEqual("CELL_DESCRIPTION".localizedFormat("sunny day"), "Description: sunny day")
+        XCTAssertEqual("CELL_HUMIDITY".localizedFormat(arguments: 12, using: nil, in: nil), "Humidity: 12%")
+    }
+    
+    func testLocalizationVietnamese() {
+        PreferencesService.shared.language = .vietnamese
+        XCTAssertEqual("SETTINGS_TITLE".localized(), "Cài đặt")
+        XCTAssertEqual("CELL_DESCRIPTION".localizedFormat("sunny day"), "Mô tả: sunny day")
     }
 }
