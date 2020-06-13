@@ -56,7 +56,6 @@
 		BEA70AB22492863A00B4D57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB02492863A00B4D57A /* Main.storyboard */; };
 		BEA70AB42492863C00B4D57A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB32492863C00B4D57A /* Assets.xcassets */; };
 		BEA70AB72492863C00B4D57A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA70AB52492863C00B4D57A /* LaunchScreen.storyboard */; };
-		BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */; };
 		BEA70ACD2492863C00B4D57A /* WeatherForekastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA70ACC2492863C00B4D57A /* WeatherForekastUITests.swift */; };
 		BEA9929C249401B900F05B79 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA9929B249401B900F05B79 /* ExtensionTests.swift */; };
 		BEC794CE249378D000127B52 /* Date+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC794CD249378D000127B52 /* Date+Converter.swift */; };
@@ -137,7 +136,6 @@
 		BEA70AB62492863C00B4D57A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA70AB82492863C00B4D57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA70ABD2492863C00B4D57A /* WeatherForekastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherForekastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForekastTests.swift; sourceTree = "<group>"; };
 		BEA70AC32492863C00B4D57A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA70AC82492863C00B4D57A /* WeatherForekastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherForekastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA70ACC2492863C00B4D57A /* WeatherForekastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForekastUITests.swift; sourceTree = "<group>"; };
@@ -397,7 +395,6 @@
 				BEA9929B249401B900F05B79 /* ExtensionTests.swift */,
 				BE5EB70F2494C9B60003DB8B /* PreferencesTest.swift */,
 				BE5EB70D249476E20003DB8B /* RouterTests.swift */,
-				BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */,
 				BE5EB7112494CD7E0003DB8B /* Model */,
 				BE5EB7162494D33D0003DB8B /* ViewModel */,
 			);
@@ -712,7 +709,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5EB7152494D1670003DB8B /* TestRequestForcast.swift in Sources */,
-				BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */,
 				BE5EB70E249476E20003DB8B /* RouterTests.swift in Sources */,
 				BE5EB7132494CD870003DB8B /* TestErrorResponse.swift in Sources */,
 				BE5EB7102494C9B60003DB8B /* PreferencesTest.swift in Sources */,
