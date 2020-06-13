@@ -17,7 +17,7 @@ class TestRequestForcast: XCTestCase {
         request = RequestForecast()
     }
     
-    func testInitialize() {
+    func testInitialize() throws {
         XCTAssert(request.keyword == nil)
         XCTAssertEqual(request.count, PreferencesService.shared.numOfDays)
         XCTAssertEqual(request.lang, PreferencesService.shared.language)

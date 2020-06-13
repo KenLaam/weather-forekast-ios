@@ -23,19 +23,19 @@ class TestHomeViewModel: XCTestCase {
         recorderError.on(valueSubject: viewModel.error)
     }
     
-    func testInitialize() {
+    func testInitialize() throws {
         XCTAssertEqual(viewModel.request.count, PreferencesService.shared.numOfDays)
         XCTAssertEqual(viewModel.request.lang, PreferencesService.shared.language)
         XCTAssertEqual(viewModel.request.units, PreferencesService.shared.tempUnit)
     }
     
-    func testSearchWith2Chars() {
+    func testSearchWith2Chars() throws {
         viewModel.fetchForecast("PU")
         XCTAssert(recorderError.items.last??.type == ErrorResponse.ErrorType.minChars)
         XCTAssert(recorderForcast.items.isEmpty)
     }
     
-    func testSearchValidResult() {
+    func testSearchValidResult() throws {
         let expectDone = self.expectation(description: "Fetch successfully")
         viewModel.fetchForecast("Saigon")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
@@ -46,7 +46,7 @@ class TestHomeViewModel: XCTestCase {
         XCTAssertFalse(recorderForcast.items.isEmpty)
     }
     
-    func testSearchNotFound() {
+    func testSearchNotFound() throws {
         let expectDone = self.expectation(description: "Fetch Done")
         viewModel.fetchForecast("Saigonese")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
@@ -57,7 +57,7 @@ class TestHomeViewModel: XCTestCase {
         XCTAssert(recorderForcast.items.isEmpty)
     }
     
-    func testSearchWith10Days() {
+    func testSearchWith10Days() throws {
         let expectDone = self.expectation(description: "Fetch Done")
         viewModel.request.count = 10
         viewModel.fetchForecast("Saigon")
@@ -68,12 +68,12 @@ class TestHomeViewModel: XCTestCase {
         XCTAssert(recorderForcast.items.count == 10)
     }
     
-    func testNavigation() {
+    func testNavigation() throws {
         viewModel.openSettings()
         XCTAssert(Router.shared.coordinator.currentViewController is SettingsViewController)
     }
     
-    func testUpdateCount() {
+    func testUpdateCount() throws {
         viewModel.openSettings()
         guard let settingVC = Router.shared.coordinator.currentViewController as? SettingsViewController else {
             return

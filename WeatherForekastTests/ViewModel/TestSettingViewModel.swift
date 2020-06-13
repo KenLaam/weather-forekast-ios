@@ -19,13 +19,13 @@ class TestSettingViewModel: XCTestCase {
         viewModel = SettingsViewModel(handler)
     }
     
-    func testInitialize() {
+    func testInitialize() throws {
         XCTAssertEqual(viewModel.request.count, PreferencesService.shared.numOfDays)
         XCTAssertEqual(viewModel.request.lang, PreferencesService.shared.language)
         XCTAssertEqual(viewModel.request.units, PreferencesService.shared.tempUnit)
     }
     
-    func testUpdateData() {
+    func testUpdateData() throws {
         viewModel.updateLanguage(.vietnamese)
         viewModel.updateTempUnit(.kelvin)
         viewModel.updateNumOfDays(2)

@@ -10,7 +10,8 @@ import XCTest
 @testable import WeatherForekast
 
 class PrefrencesTest: XCTestCase {
-    override class func setUp() {
+    
+    override func setUp() {
         PreferencesService.shared.clear()
     }
     

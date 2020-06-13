@@ -11,20 +11,12 @@ import XCTest
 
 class ExtensionTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testClassName() throws {
         XCTAssertEqual(HomeViewController.className, "HomeViewController")
         XCTAssertEqual(ForecastTableViewCell().className, "ForecastTableViewCell")
     }
     
-    func testDateTime() {
+    func testDateTime() throws {
         let today = Date()
         let format = "dd/MM.yyyy"
         let formatter = DateFormatter()
@@ -33,20 +25,20 @@ class ExtensionTests: XCTestCase {
         XCTAssertEqual(today.toString(format), todayStr)
     }
     
-    func testLocalizationEnglish() {
+    func testLocalizationEnglish() throws {
         PreferencesService.shared.language = .english
         XCTAssertEqual("SETTINGS_TITLE".localized(), "Settings")
         XCTAssertEqual("CELL_DESCRIPTION".localizedFormat("sunny day"), "Description: sunny day")
         XCTAssertEqual("CELL_HUMIDITY".localizedFormat(arguments: 12, using: nil, in: nil), "Humidity: 12%")
     }
     
-    func testLocalizationVietnamese() {
+    func testLocalizationVietnamese() throws {
         PreferencesService.shared.language = .vietnamese
         XCTAssertEqual("SETTINGS_TITLE".localized(), "Cài đặt")
         XCTAssertEqual("CELL_DESCRIPTION".localizedFormat("sunny day"), "Mô tả: sunny day")
     }
     
-    func testGetDeviceLangCode() {
+    func testGetDeviceLangCode() throws {
         XCTAssertEqual(AppUtils.currentLanguageCode(), "en")
     }
     
