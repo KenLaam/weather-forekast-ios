@@ -18,16 +18,4 @@ extension Encodable {
             return nil
         }
     }
-    
-    var json: String? {
-        do {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            let jsonData = try encoder.encode(self)
-            let str = String(data: jsonData, encoding: .utf8)
-            return str
-        } catch {
-            return nil
-        }
-    }
 }

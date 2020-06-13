@@ -128,9 +128,5 @@ class ScreenCoordinator : ScreenCoordinatorType {
             .take(1)
             .ignoreElements()
     }
-    
-    func refreshCurrentViewController(_ controller: UIViewController) {
-        currentViewController = actualViewController(from: controller)
-    }
 }
 
