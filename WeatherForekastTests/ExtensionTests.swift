@@ -21,6 +21,7 @@ class ExtensionTests: XCTestCase {
 
     func testClassName() throws {
         XCTAssertEqual(HomeViewController.className, "HomeViewController")
+        XCTAssertEqual(ForecastTableViewCell().className, "ForecastTableViewCell")
     }
     
     func testDateTime() {
