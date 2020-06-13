@@ -43,7 +43,27 @@ class TestHomeViewModel: XCTestCase {
         })
         wait(for: [expectDone], timeout: 2)
         XCTAssert(recorderError.items.last! == nil)
+        let today = Date()
         XCTAssertFalse(recorderForcast.items.isEmpty)
+        XCTAssertEqual(recorderForcast.items.first!.dateTime, today.toString())
+    }
+    
+    func testCellViewModel() throws {
+        let expectDone = self.expectation(description: "Fetch successfully")
+        viewModel.fetchForecast("Saigon")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+            expectDone.fulfill()
+        })
+        wait(for: [expectDone], timeout: 2)
+        let today = Date()
+        let forecast = recorderForcast.items.first!
+        let cellVM = ForecastCellViewModel(forecast)
+        cellVM.setupData()
+        XCTAssertEqual(cellVM.date.value, "CELL_DATE".localizedFormat(today.toString()))
+        XCTAssertEqual(cellVM.description.value, "CELL_DESCRIPTION".localizedFormat(forecast.weather[0].description!))
+        XCTAssertEqual(cellVM.temp.value, "CELL_AVERAGE_TEMP".localizedFormat(forecast.tempAverage))
+        XCTAssertEqual(cellVM.pressure.value, "CELL_PRESSURE".localizedFormat(forecast.pressure ?? 0))
+        XCTAssertEqual(cellVM.humidity.value, "CELL_HUMIDITY".localizedFormat(forecast.humidity ?? 0))
     }
     
     func testSearchNotFound() throws {
@@ -80,7 +100,7 @@ class TestHomeViewModel: XCTestCase {
         }
         settingVC.viewModel.updateNumOfDays(3)
         settingVC.viewModel.updateLanguage(.vietnamese)
-        settingVC.viewModel.finishSettings()
+        settingVC.didTapDone()
         
         let expectDone = self.expectation(description: "Fetch Done")
         XCTAssertEqual(viewModel.request.count, 3)
@@ -91,6 +111,17 @@ class TestHomeViewModel: XCTestCase {
         })
         wait(for: [expectDone], timeout: 2)
         XCTAssert(recorderForcast.items.count == 3)
+    }
+    
+    func testOpenSettingsAndClose() throws {
+        viewModel.openSettings()
+        guard let settingVC = Router.shared.coordinator.currentViewController as? SettingsViewController else {
+            return
+        }
+        settingVC.didTapBack()
+        viewModel.fetchForecast()
+        XCTAssert(recorderError.items.last??.type == ErrorResponse.ErrorType.minChars)
+        XCTAssert(recorderForcast.items.isEmpty)
     }
 }
 

@@ -9,7 +9,7 @@ This application is sample app with MVVM structure and support from OpenWeatherM
  - [x] Respect the iOS Dynamic Type settings of the user.
  - [x] Support change configuration `number of days, language & temperature unit`.
  - [x] Localization with English and Vietnamese.
- - [x] Unit test with code coverage: `68.5%`
+ - [x] Unit test with code coverage: `75.4%`
  - [ ] UITest
  - [ ] CI/CD
 

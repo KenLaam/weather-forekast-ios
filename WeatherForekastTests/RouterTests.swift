@@ -32,19 +32,17 @@ class RouterTests: XCTestCase {
     }
     
     func testFlow() throws {
-        Router.shared.toHome()
+        let homeVM = HomeViewModel()
         XCTAssert(Router.shared.coordinator.currentViewController is HomeViewController)
         
-        let handler: HandlerUpdateSettings = { request in
-        }
-        Router.shared.toSettings(handler: handler)
+        homeVM.openSettings()
         XCTAssert(Router.shared.coordinator.currentViewController is SettingsViewController)
     }
     
     func testFlowBackToHome() throws {
         Router.shared.toHome()
         
-        Router.shared.pop()
+        Router.shared.pop(false)
         XCTAssert(Router.shared.coordinator.currentViewController is HomeViewController)
         
         Router.shared.popToHome()

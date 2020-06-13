@@ -28,7 +28,7 @@ class Router {
     
     @discardableResult
     func popToHome() -> Completable {
-        return coordinator.pop(toRootview: true, animated: true)
+        return coordinator.popToRoot(animated: true)
     }
     
     // MARK: Navigation
