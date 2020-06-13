@@ -19,14 +19,14 @@
 "CELL_HUMIDITY" = "Humidity: %d%%";
 "CELL_DESCRIPTION" = "Description: %@";
 
-"SETTING_TITLE" = "Settings";
+"SETTINGS_TITLE" = "Settings";
 "SETTINGS_NO_DAYS" = "Number of days: %d";
 "SETTINGS_LANG" = "Language:";
 "SETTINGS_TEMP_UNIT" = "Temperature Unit:";
 
 "ERROR_OFFLINE" = "Your connection appears to be offline.\nPlease check your connection!";
 "ERROR_TIMEOUT" = "Time out.\nPlease try again!";
-"ERROR_EMPTY" = "Nothing here.\nTry search your city for weather forecast!";
+"ERROR_EMPTY" = "Try search your city for weather forecast!";
 "ERROR_NOT_FOUND" = "City not found!\nTry again!";
 "ERROR_MIN_CHARACTER" = "Please input at least 3 characters!";
 "ERROR_OTHER" = "Something went wrong.\nPlease try again!";

@@ -41,6 +41,6 @@ extension UITableView {
         }
         let viewError = ErrorView(frame: bounds)
         backgroundView = viewError
-        viewError.lblMessage.text = error.message
+        viewError.updateStatus(error)
     }
 }

@@ -36,6 +36,23 @@ class ErrorResponse: Error {
         }
     }
     
+    var iconName: String {
+        switch type {
+        case .offline:
+            return "ic_cloud_link"
+        case .timeout:
+            return "ic_cloud_retry"
+        case .empty:
+            return "ic_cloud_empty"
+        case .notFound:
+            return "ic_cloud_error"
+        case .minChars:
+            return "ic_cloud_warning"
+        default:
+            return "ic_cloud_warning"
+        }
+    }
+    
     init(_ type: ErrorType) {
         self.type = type
     }

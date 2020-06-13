@@ -85,7 +85,7 @@ class SettingsViewController: BaseViewController<SettingsViewModel> {
     }
     
     override func setupLocalization() {
-        title = "SETTING_TITLE".localized()
+        title = "SETTINGS_TITLE".localized()
         lblLang.text = "SETTINGS_LANG".localized()
         lblTemp.text = "SETTINGS_TEMP_UNIT".localized()
     }

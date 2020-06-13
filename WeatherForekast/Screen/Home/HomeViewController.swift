@@ -14,7 +14,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     @IBOutlet weak var tableForecasts: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    lazy var btnSettings = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(showSettings))
+    lazy var btnSettings = UIBarButtonItem(title: "SETTINGS_TITLE".localized(), style: .plain, target: self, action: #selector(showSettings))
     
     override func setupUI() {
         navigationController?.navigationBar.backgroundColor = .white
@@ -47,6 +47,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func setupLocalization() {
         title = "APP_NAME".localized()
+        btnSettings.title = "SETTINGS_TITLE".localized()
         searchBar.placeholder = "SEARCH_PLACEHOLDER".localized()
     }
     

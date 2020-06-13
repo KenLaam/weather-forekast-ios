@@ -10,6 +10,7 @@ import UIKit
 
 class ErrorView: UIView {
     
+    @IBOutlet weak var imvStatus: UIImageView!
     @IBOutlet weak var lblMessage: UILabel!
     
     override init(frame: CGRect) {
@@ -31,5 +32,10 @@ class ErrorView: UIView {
         self.backgroundColor = .clear
         lblMessage.font = UIFont.preferredFont(forTextStyle: .body)
         lblMessage.numberOfLines = 0
+    }
+    
+    func updateStatus(_ status: ErrorResponse) {
+        lblMessage.text = status.message
+        imvStatus.image = UIImage(named: status.iconName)
     }
 }
