@@ -45,4 +45,9 @@ class ExtensionTests: XCTestCase {
         XCTAssertEqual("SETTINGS_TITLE".localized(), "Cài đặt")
         XCTAssertEqual("CELL_DESCRIPTION".localizedFormat("sunny day"), "Mô tả: sunny day")
     }
+    
+    func testGetDeviceLangCode() {
+        XCTAssertEqual(AppUtils.currentLanguageCode(), "en")
+    }
+    
 }

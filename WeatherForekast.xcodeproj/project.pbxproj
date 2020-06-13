@@ -17,6 +17,10 @@
 		BE5EB70E249476E20003DB8B /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB70D249476E20003DB8B /* RouterTests.swift */; };
 		BE5EB7102494C9B60003DB8B /* PreferencesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB70F2494C9B60003DB8B /* PreferencesTest.swift */; };
 		BE5EB7132494CD870003DB8B /* TestErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB7122494CD870003DB8B /* TestErrorResponse.swift */; };
+		BE5EB7152494D1670003DB8B /* TestRequestForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB7142494D1670003DB8B /* TestRequestForcast.swift */; };
+		BE5EB7182494D3480003DB8B /* TestSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB7172494D3480003DB8B /* TestSettingViewModel.swift */; };
+		BE5EB71A2494D45A0003DB8B /* TestHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB7192494D45A0003DB8B /* TestHomeViewModel.swift */; };
+		BE5EB71E2494D9FE0003DB8B /* SubjectRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EB71D2494D9FE0003DB8B /* SubjectRecorder.swift */; };
 		BE887084249288900020A384 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887083249288900020A384 /* ClassNameProtocol.swift */; };
 		BE887086249288A60020A384 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887085249288A60020A384 /* UITableViewExt.swift */; };
 		BE887089249288DC0020A384 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE887088249288DC0020A384 /* Router.swift */; };
@@ -90,6 +94,10 @@
 		BE5EB70D249476E20003DB8B /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		BE5EB70F2494C9B60003DB8B /* PreferencesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTest.swift; sourceTree = "<group>"; };
 		BE5EB7122494CD870003DB8B /* TestErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestErrorResponse.swift; sourceTree = "<group>"; };
+		BE5EB7142494D1670003DB8B /* TestRequestForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequestForcast.swift; sourceTree = "<group>"; };
+		BE5EB7172494D3480003DB8B /* TestSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingViewModel.swift; sourceTree = "<group>"; };
+		BE5EB7192494D45A0003DB8B /* TestHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeViewModel.swift; sourceTree = "<group>"; };
+		BE5EB71D2494D9FE0003DB8B /* SubjectRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectRecorder.swift; sourceTree = "<group>"; };
 		BE887083249288900020A384 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		BE887085249288A60020A384 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		BE887088249288DC0020A384 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -195,8 +203,19 @@
 			isa = PBXGroup;
 			children = (
 				BE5EB7122494CD870003DB8B /* TestErrorResponse.swift */,
+				BE5EB7142494D1670003DB8B /* TestRequestForcast.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BE5EB7162494D33D0003DB8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE5EB71D2494D9FE0003DB8B /* SubjectRecorder.swift */,
+				BE5EB7192494D45A0003DB8B /* TestHomeViewModel.swift */,
+				BE5EB7172494D3480003DB8B /* TestSettingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BE88707E249286F80020A384 /* AppConfig */ = {
@@ -380,6 +399,7 @@
 				BE5EB70D249476E20003DB8B /* RouterTests.swift */,
 				BEA70AC12492863C00B4D57A /* WeatherForekastTests.swift */,
 				BE5EB7112494CD7E0003DB8B /* Model */,
+				BE5EB7162494D33D0003DB8B /* ViewModel */,
 			);
 			path = WeatherForekastTests;
 			sourceTree = "<group>";
@@ -691,11 +711,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5EB7152494D1670003DB8B /* TestRequestForcast.swift in Sources */,
 				BEA70AC22492863C00B4D57A /* WeatherForekastTests.swift in Sources */,
 				BE5EB70E249476E20003DB8B /* RouterTests.swift in Sources */,
 				BE5EB7132494CD870003DB8B /* TestErrorResponse.swift in Sources */,
 				BE5EB7102494C9B60003DB8B /* PreferencesTest.swift in Sources */,
 				BEA9929C249401B900F05B79 /* ExtensionTests.swift in Sources */,
+				BE5EB7182494D3480003DB8B /* TestSettingViewModel.swift in Sources */,
+				BE5EB71A2494D45A0003DB8B /* TestHomeViewModel.swift in Sources */,
+				BE5EB71E2494D9FE0003DB8B /* SubjectRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
