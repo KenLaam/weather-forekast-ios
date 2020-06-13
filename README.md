@@ -12,7 +12,9 @@ This application is sample app with MVVM structure and support from OpenWeatherM
  - [x] Unit test with code coverage: `68.5%`
 
 ## Screenshots
-![Home](./Screenshots/home.png) ![Settings](./Screenshots/settings.png) ![Home English](./Screenshots/home-en.png) ![Home Vietnamese](./Screenshots/home-vi.png)
+| Home  | Settings | Startup in English | Startup in Vietnamese |
+| ------------- | ------------- | ------------- | ------------- |
+| ![Home](./Screenshots/home.png) | ![Settings](./Screenshots/settings.png) | ![Home English](./Screenshots/home-en.png) | ![Home Vietnamese](./Screenshots/home-vi.png) |
 
 ## License
 Weather Forekast is available under the MIT license.
