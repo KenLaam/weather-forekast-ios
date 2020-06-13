@@ -10,6 +10,8 @@ This application is sample app with MVVM structure and support from OpenWeatherM
  - [x] Support change configuration `number of days, language & temperature unit`.
  - [x] Localization with English and Vietnamese.
  - [x] Unit test with code coverage: `68.5%`
+ - [ ] UITest
+ - [ ] CI/CD
 
 ## Screenshots
 | Home  | Settings | Startup in English | Startup in Vietnamese |
