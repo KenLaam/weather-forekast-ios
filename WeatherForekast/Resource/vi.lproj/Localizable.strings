@@ -19,7 +19,7 @@
 "CELL_HUMIDITY" = "Độ ẩm: %d%%";
 "CELL_DESCRIPTION" = "Mô tả: %@";
 
-"SETTING_TITLE" = "Cài đặt";
+"SETTINGS_TITLE" = "Cài đặt";
 "SETTINGS_NO_DAYS" = "Số ngày dự báo: %d";
 "SETTINGS_LANG" = "Ngôn ngữ:";
 "SETTINGS_TEMP_UNIT" = "Đơn vị nhiệt độ:";

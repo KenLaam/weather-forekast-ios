@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "img_error.png",
+      "filename" : "ic_cloud_error.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "img_error@2x.png",
+      "filename" : "ic_cloud_error@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "img_error@3x.png",
+      "filename" : "ic_cloud_error@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
